@@ -36,10 +36,10 @@ angular
                         }else{
                             $sessionStorage.token = $scope.token;
                             $rootScope.logged = true;
-                            // var args = {};
-                            // $scope.$emit('reloadLoginData', args);
+                            var args = {};
+                            $rootScope.$broadcast('reloadLoginData', args);
                             $state.go("dashboard");
-                            location.reload();
+                            // location.reload();
                         }
                     });
                 }

@@ -57,10 +57,11 @@ angular
         //     $scope.user = response.data[0];
         // });
         
-        // $scope.$on('reloadLoginData', function(event, args) {
-        //     AuthenticationService.getUserData().then( function (response){
-        //         $scope.user = response.data[0];
-        //     });
-        // });
+        $scope.$on('reloadLoginData', function(event, args) {
+            AuthenticationService.getUserData().then( function (response){
+                $scope.user = response.data[0];
+                console.log("Got it");
+            });
+        });
     
 }]);
