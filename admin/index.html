@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABRV</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+    </style>
+    <style>
+    [ng\: cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x- ng-cloak {
+      display: none !important;
+    }
+    </style>
+    <!-- <link rel="stylesheet" href="css/abrv.css"> -->
+    <!-- <link rel="stylesheet" href="css/navbarStyle.css"> -->
+    <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
+    <!-- <script src="cordova.js"></script> -->          <!-- phantom library, needed for Cordova api calls, added during build -->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>-->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/trucate.js"></script>
+    <script src="js/ngStorage.min.js"></script>
+    <script src="js/nya-bs-select.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="dist/css/skins/skin-green.min.css">
+    <link rel="stylesheet" href="css/nya-bs-select.min.css">
+    <link rel="stylesheet" href="css/adminABRV.css">
+
+</head>
+
+<body class="skin-green layout-top-nav">
+    <div class="wrapper">
+
+        <div ng-app="app">
+            <header ng-include="'templates/header.html'"></header>
+            <div class="content-wrapper"style="padding-top:15px;">
+                <div class="ng-cloak" ui-view ></div>
+            </div>
+            <!-- <footer ng-include="'templates/footer.html'"></footer> -->
+            <footer class="main-footer">
+                <strong>Copyright &copy; 2016 <a href="http://abrv.org.br">ABRV</a>.</strong> All rights reserved.
+            </footer>
+        </div>
+    </div>
+
+</body>
+    <script src="js/app.js"></script> 
+    <script src="js/controllers/anuidadesCtrl.js"></script>
+    <script src="js/controllers/associadosCtrl.js"></script>
+    <script src="js/controllers/associadoCtrl.js"></script>
+    <script src="js/controllers/dashboardCtrl.js"></script>
+    <script src="js/controllers/eventoCtrl.js"></script>
+    <script src="js/controllers/eventosCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/transacoesCtrl.js"></script>
+    <script src="js/services/authenticationService.js"></script>
+    <script src="js/services/backendService.js"></script>
+    <script src="js/services/pagSeguroService.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
+</html>

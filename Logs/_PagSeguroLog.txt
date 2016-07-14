@@ -1,0 +1,102 @@
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-05-05 01:42:29 | code: 6DA6BF6B3D3DC04114FCDFB1FC2CD8A4
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$ |  (  ) | 2016-05-24 04:22:24 | error: [HTTP 400] - BAD_REQUEST 0 [11028] - Item amount is required. (e.g. "12.00")1 [11033] - Item description is required.2 [11025] - Item Id is required.
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 04:25:20 | code: 57BDC1C99090FA2994363FB1D436A074
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 04:44:19 | code: BBA64206D6D6289664C9DFA730D9A6F8
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 04:45:35 | code: E088B9984E4E182DD401AF971A4F83EF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 04:46:42 | code: E4E1517FD0D0A3D334197F8DED0D7B9F
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 04:50:16 | code: 2C45E5E52626485FF42E4F8E602F3637
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:10:05 | code: 51FA5E6996967A3EE4DB5FBA0F47F623
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:11:18 | code: 6C974D329494924AA4909FBD71D21F6E
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:12:51 | code: D8889F1A9292CEDAA4383F890A3F6A57
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:14:38 | code: 771922490909E1A55454FFACB1B21430
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:24:35 | code: 984B4E0B2C2CC1BEE49CAF86B420E8C4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:40:00 | code: B26ADA7DD3D336033478AF9BA5EC1562
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:41:18 | code: E4E535E4ABABB7EEE4DABFA34BB2253B
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-24 05:42:11 | code: B41DFBD13838A41224D7DF9C8F9F77FF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 21:39:51 | code: 31A9BC85F0F07E9884777F9BBE06BEDA
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 21:49:22 | code: E9F3BFA44141F9C224549FA0425D0253
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 21:55:10 | code: 39F2F6670303C95004369FADBF543FAF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 21:58:28 | code: 3B8035AE3C3CB01AA483BF81D78D1FFF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:01:50 | code: 52975CED9C9CDD4AA47C4F9E777C9878
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:16:26 | code: B2C2FDA0E5E56840040F5F9E3A079D8A
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:16:49 | code: 08E00C902929ECB33446CFBD216FDDE7
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:17:18 | code: 78329CD6F0F03651145F4FB85E359C1B
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:18:09 | code: 42E90847BEBEEEACC4739FB74C713A9C
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:18:39 | code: B6AFBEE65151E5B6642C0F8230737AEC
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:19:04 | code: 1969F6EBA0A0FBC004418FA7F00172C4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 22:19:18 | code: 50C29A496363665FF429FFA094E6DA55
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:35:45 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:40:11 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:41:59 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:43:24 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | 2016-05-26 23:44:45 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:49:42 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:53:16 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-26 23:56:19 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:02:59 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:04:51 | error: [HTTP 401] - UNAUTHORIZED 
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:05:17 | error: [HTTP 401] - UNAUTHORIZED 
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:11:33 | code: 1480D544B8B88F4664EABFA029C555F6
+FALHA | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:11:57 | error: [HTTP 401] - UNAUTHORIZED 
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:13:09 | code: 89E0A8B51A1A17FDD4502FB5FE6166F0
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 00:14:00 | code: 51978E98DDDDCC3664703F9629EB729E
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 01:23:40 | code: 19AF29A50C0CCE4114302FBC28E8EA04
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 03:31:46 | code: 60A1B0412D2D7BE334A9EF9D6FACFB69
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 03:44:53 | code: 63107DE60505DAC77415BFB4C595F182
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 04:28:33 | code: 5E5CDD437F7F997DD40BAF8DA4ACE642
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 22:14:30 | code: 4916594DDCDCF0811460BFA1A01953DD
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 22:14:59 | code: B9D3C333FDFDB011145BBF85631CF1A4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-27 23:31:49 | code: 1DF3697D6D6D724114185F80237F03A4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 2 ) | 2016-05-28 00:50:08 | code: C6C0CC87C5C5A29CC4AC6FB877ABF596
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 3 ) | 2016-05-28 02:42:19 | code: 7B8C99AD91919D2004F34F9CE7AB60FF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 9 ) | 2016-05-28 04:14:09 | code: 949E012F0F0FBCA994E9AF887F05A8DE
+FALHA | Daniel Moori | daniel.moori@gmail.com | 2016-05-28 04:15:14 | error: [HTTP 400] - BAD_REQUEST 0 [11014] - senderPhone invalid value: 370014728751 [11013] - senderAreaCode invalid value: CPF
+FALHA | Daniel Moori | daniel.moori@gmail.com | 2016-05-28 04:16:05 | error: [HTTP 400] - BAD_REQUEST 0 [11014] - senderPhone invalid value: 370014728751 [11013] - senderAreaCode invalid value: CPF
+FALHA | Daniel Moori | daniel.moori@gmail.com | 2016-05-28 04:19:20 | error: [HTTP 400] - BAD_REQUEST 0 [11014] - senderPhone invalid value: 370014728751 [11013] - senderAreaCode invalid value: CPF
+FALHA | Daniel Moori | daniel.moori@gmail.com | 2016-05-28 04:20:21 | error: [HTTP 400] - BAD_REQUEST 0 [11013] - senderAreaCode invalid value: CPF1 [11014] - senderPhone invalid value: 37001472875
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-05-28 04:23:57 | code: 860586DFE3E33DDDD464EFBA096C4329
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:37:27 | code: D470F9AE75759C0EE446CF8CEF6818DF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:38:20 | code: 9D2919F3474714E884D37F918C278AC9
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:40:21 | code: 755AF3E36262D1ADD412CF883BCA9395
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 05:45:41 | code: 5D9B93AE8F8F9DDAA488FFA33FD9B49D
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:47:28 | code: FB5A67F82929134444AD1FA1913A5C25
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:48:57 | code: 54677297EDED0C8CC4136FAA3CA8791E
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:50:24 | code: A9E427BE86861D1334C01F85B221B013
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:50:41 | code: EA1A873EB7B7BD8884AC6F8073CE8650
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:52:11 | code: 4CCD874A6363C9B774336FAC930B78BF
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:53:26 | code: 7156B93A01011E62249DEFAA5DED059A
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:53:48 | code: CA551C959D9D70D994086FBED3BB3CAD
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:54:51 | code: BCCAC3003E3E5CDCC4C58FB48C8461B0
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:55:48 | code: 9B2D6BA567678EE6646F9F8AC1709E31
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:56:07 | code: E3D9FF9CD5D56ACFF4DD7F8ADCC6EB94
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 05:58:32 | code: 1B050F115D5D353CC464AFA25C3EDB1C
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 06:02:42 | code: EE92E5245F5F84944473EF9423B1C2B4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:06:27 | code: 5BE8B0837070728994575F9E25975D76
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:08:29 | code: 3935211254543E9EE4899F96ACB9B2D3
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:11:56 | code: 60BC7FB5E2E21126643F8FBDF06DCFD8
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:17:10 | code: 31E5072951510A54440EAFAA54E82A22
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 06:17:53 | code: D36621F13434027114A7FF9B8C2DAC0C
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:18:12 | code: 1B77BC56FEFE85A774D23FAC856E1CFB
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:22:58 | code: 7C3CC1F68181957994784F86B6A4CD71
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:24:37 | code: FD4851825454FA9EE48B7FB9A5E31EB9
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:32:23 | code: 1C08D9B9D9D9D98DD44A8F88DF88787C
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:33:31 | code: 235D985D6E6E968224C7EF967A77EDC4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:34:22 | code: F5C2673E1717605114EE5FBFFC823ED4
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:34:48 | code: 5059AC547C7C933AA4466FB664875CA9
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$145.00 | Curso Oncologia I - Desconto ( 5 ) | 2016-05-28 06:35:07 | code: 98D57A72F9F9376BB44BFFB2A639E03A
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-05-28 06:35:27 | code: E9160C7C4F4FE02004131F9D51B3C896
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 9 ) | 2016-05-30 00:28:22 | code: 925602775C5C4B3224307F8E654CE979
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-06-01 03:20:29 | code: D80E5FB79090944DD4334FA9D6AF1C84
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia I - Desconto ( 9 ) | 2016-06-10 07:29:01 | code: A59FADE0A0A061B2246FCFBC8FEB04FC
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$120.00 | Curso Oncologia I - Desconto ( 4 ) | 2016-06-10 07:29:55 | code: 71BA15A1C5C594C004C0EF813C2311FD
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$210.00 | Curso Oncologia II - Primeiro Lote ( 26 ) | 2016-06-21 00:32:09 | code: EE36988CCBCBDBC004174FB991738F44
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | R$300.00 | SINDIV VI - Teste ( 32 ) | 2016-06-22 09:45:54 | code: 4240BFFC2828A3722495FF83EFCE3BA1
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:37:49 | code: 5053BB9AE2E24D20045D7F8FB88E4A00
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:48:34 | code: 23FFE98BEAEAF33884C7AF84EC43FCDB
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:48:59 | code: 87446B95000014E8847E0FB8EF308E7E
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:49:31 | code: 043BAA89AFAF66C0041B2FB48E9F82BE
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:51:04 | code: 711943FD7474EAC664D72F82602F703B
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:51:51 | code: 29C935ECC8C8439BB4DD3FA4DE58AA95
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:52:40 | code: E6E79BA76666AA9884842FA430BA74DC
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:53:24 | code: 8EFBA6753434CEACC42DAF920CD98FA2
+SUCESSO | Daniel Moori | daniel.moori@gmail.com | 2016-07-14 01:56:40 | code: 95670DFC2727CC9EE461FF8D4BF27938

@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Ativação de conta</div>
+    </div>
+    <div class="row homeBlock">
+
+        <div data-ng-show="loading">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2 class="font-verde">Carregando...</h2>
+                    <p>Aguarde enquanto autenticamos a sua inscrição.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-show="sucesso">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2 class="font-verde">Seu email foi cadastrado com sucesso</h2>
+                    <p>Agora você faz parte de nossa lista e ficará informado de tudo o que acontece na ABRV.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-show="errorMSG">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2 class="font-verde">Houve um erro ao autenticar a sua inscrição.</h2>
+                    <p>Os administradores já foram notificados. Por favor tente mais tarde.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>

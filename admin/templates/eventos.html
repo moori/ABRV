@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <span class="h2">Cursos  <i ng-show="loading" class="fa fa-spinner fa-spin"></i>  </span>
+      <span class="pull-right lead">
+        <span class="glyphicon glyphicon-search"></span>
+        <input ng-model="query" type="text"/>
+      </span>
+    </div>
+    <div class="panel-body">
+      <p>Consulta de cursos e eventos.</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><a href="" ng-click="sortField = 'ID'; reverse = !reverse">ID</a></th>
+          <th><a href="" ng-click="sortField = 'Name'; reverse = !reverse">Nome</th>
+          <th><a href="" ng-click="sortField = 'Data'; reverse = !reverse">Data</th>
+          <th><a href="" ng-click="sortField = 'Data'; reverse = !reverse">Ativo</th>
+          <!-- <th><a href="" ng-click="sortField = 'Inscritos'; reverse = !reverse">Inscritos</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="evento in eventos | filter:query | orderBy:sortField:reverse">
+          <td>{{ evento.ID }}</td>
+          <td><a href="#/evento/{{evento.ID}}">{{ evento.Name }}</a></td>
+          <td>{{ evento.Data }}</td>
+          <td>{{ evento.Active }}</td>
+          <!-- <td>{{ evento.inscritos }}</td> -->
+          <!-- <td>{{ u.Status | pagSeguroStatus }} ({{ u.Status | pagSeguroStatus}})</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+</div>

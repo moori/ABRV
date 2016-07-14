@@ -1,0 +1,20 @@
+
+<div class="container" style="height: 600px">
+
+    <div  data-ng-switch="logged">
+        <form class="form-signin col-sm-offset-4 col-sm-4" name="form">
+            <h2 class="form-signin-heading">Dashboard ABRV</h2>
+            <label data-ng-show="!logged" for="inputEmail"  class="sr-only">Email</label>
+            <input data-ng-show="!logged" type="email" id="inputEmail" class="form-control" ng-model="email" placeholder="Email" required autofocus>
+            <br>
+            <label data-ng-show="!logged" for="inputPassword" class="sr-only">Senha</label>
+            <input data-ng-show="!logged" type="password" id="inputPassword" class="form-control" ng-model="pass" placeholder="Senha" required>
+            <br>
+            <button data-ng-show="!logged"s class="btn btn-lg btn-success btn-block" type="submit" data-ng-click="loginUser()">Log In</button>
+            <button data-ng-show="logged" class="btn btn-lg btn-warning btn-block"  data-ng-click="logoutUser()">Log Out</button>
+            <br><br>
+            <span data-ng-show="error"  class="error-message">{{errorMessage}}</span>
+        </form>
+    </div>
+
+</div> 

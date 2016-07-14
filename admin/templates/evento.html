@@ -1,0 +1,104 @@
+<div class="container">
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <span class="h2">{{evento.Name}}  <i ng-show="loading" class="fa fa-spinner fa-spin"></i>  </span>
+      <span class="pull-right lead">
+        <span class="glyphicon glyphicon-search"></span>
+        <input ng-model="query" type="text"/>
+      </span>
+    </div>
+    <div class="panel-body">
+      <p>Consulta de inscritos e a situação de pagamento.</p>
+      <p data-ng-show="evento.Active == 0" class="lead">Curso encerrado.</p>
+      
+
+      <span class=" lead">
+        <button data-ng-click="exportCSV()">Exportar .CSV 
+          <span ng-hide="downloading && !loading" >
+          <i class="fa fa-download" aria-hidden="true"></i>
+          </span>
+          <span ng-show="downloading && !loading" >
+          <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+          </span>
+
+        </button>
+      </span>
+
+
+    </div>
+
+    <div class="panel-body">
+      <h4>Inscrição de usuário</h4>
+      <p>Insira o nome, email ou cpf para selecionar um usuário a inscrever.</p>
+      <span class="pull-left lead">
+        <input ng-model="userQuery" type="text" placeholder="Busca por usuário"/>
+      </span>
+      <div data-ng-show="userQuery!=null">
+        <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Modalidade</th>
+          <th>CPF</th>
+          <th>Valor R$</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="user in usuarios | filter:userQuery | limitTo:1">
+          <td>{{ user.ID }}</td>
+          <td><a href="#/associado/{{user.ID}}">{{ user.Nome }}</a></td>
+          <td>{{ user.Email }}</td>
+          <td>{{ user.Tipo | tipoMembro}}</td>
+          <td>{{ user.CPF }}</td>
+          <td><input data-ng-model="user.forcePagamento" type="text"></td>
+          <td><button data-ng-click="forceSubInclude(user.ID, user.forcePagamento)">Inscrever</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+      </div>
+
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><a href="" ng-click="sortField = 'ID'; reverse = !reverse">ID</a></th>
+          <th><a href="" ng-click="sortField = 'Nome'; reverse = !reverse">Nome</a></th>
+          <th><a href="" ng-click="sortField = 'Email'; reverse = !reverse">Email</th>
+          <th><a href="" ng-click="sortField = 'Tipo'; reverse = !reverse">Modalidade</th>
+          <th><a href="" ng-click="sortField = 'Observation'; reverse = !reverse">Tipo de pagamento</th>
+          <th><a href="" ng-click="sortField = 'SubscriptionCode'; reverse = !reverse">Codigo de Inscrição</th>
+          <th><a href="" ng-click="sortField = 'PagamentoValor'; reverse = !reverse">Valor do pagamento</th>
+          <th><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Status</th>
+          <th><a href="" >Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="sub in subs | filter:query | orderBy:sortField:reverse">
+          <input type="hidden" data-ng-value="sub.id">
+          <td>{{ sub.ID }}</td>
+          <td><a href="#/associado/{{sub.ID}}">{{ sub.Nome }}</a></td>
+          <td>{{ sub.Email }}</td>
+          <td>{{ sub.Tipo | tipoMembro}}</td>
+          <td>{{ sub.Observation }}</td>
+          <td>{{ sub.SubscriptionCode | uppercase}}</td>
+          <td>R${{ sub.PagamentoValor }}</td>
+          <td>{{ sub.SubscriptionStatus | SubStatus }} ({{ sub.Status | pagSeguroStatus}})</td>
+          <td class="small">
+            <button class="btn-small" data-ng-click="confirmSubs(sub.ID)">Aprovar</button>
+            <button class="btn-small pull-right" data-ng-click="confirmCancel(sub.id)">Cancelar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+</div>

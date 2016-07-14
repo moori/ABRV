@@ -1,0 +1,49 @@
+<div class="container">
+
+
+  <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <span class="h2">Transações <i ng-show="loading" class="fa fa-spinner fa-spin"></i>  </span>
+        <span class="pull-right lead">
+          <span class="glyphicon glyphicon-search"></span>
+          <input ng-model="query" type="text"/>
+        </span>
+      </div>
+      <div class="panel-body">
+        <p>Consulta de todas as transações feitas através do pagseguro.</p>
+      </div>
+      
+      <!-- Table -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><a href="" ng-click="sortField = 'ID'; reverse = !reverse">ID</a></th>
+            <th><a href="" ng-click="sortField = 'UserID'; reverse = !reverse">Usuário (ID)</th>
+            <th><a href="" ng-click="sortField = 'SenderEmail'; reverse = !reverse">Email</th>
+            <th><a href="" ng-click="sortField = 'TransactionCode'; reverse = !reverse">Código da transação</th>
+            <th><a href="" ng-click="sortField = 'Date'; reverse = !reverse">Data da transação</th>
+            <th><a href="" ng-click="sortField = 'Description'; reverse = !reverse">Descrição (ID)</th>
+            <th><a href="" ng-click="sortField = 'Amount'; reverse = !reverse">Valor</th>
+            <th><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Status (ID)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="t in transacoes | filter:query | orderBy:sortField:reverse" class="small">
+            <td>{{ t.ID}}</td>
+            <td>{{ t.Nome }} ({{t.UserID}})</td>
+            <td>{{ t.SenderEmail }}</td>
+            <td>{{ t.TransactionCode }}</td>
+            <td data-ng-bind="t.Date | pagSeguroDate"></td>
+            <td>{{ t.Description }} ({{ t.SaleID }})</td>
+            <td>R{{ t.Amount | currency}}</td>
+
+            <td data-ng-show="t.Status == 3" class="text-success">{{ t.Status | pagSeguroStatus }} ({{t.Status}})</td>
+            <td data-ng-hide="t.Status == 3">{{ t.Status | pagSeguroStatus }} ({{t.Status}})</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+</div>

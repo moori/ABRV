@@ -1,0 +1,159 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">{{evento.Name}}</div>
+    </div>
+    <div class="col-sm-8 no-padding-left">
+
+		<p data-ng-bind-html="evento.Html"></p>
+
+		<div class="table-responsive bottom-buffer " style="border-radius: 8px; background-color:white">
+			<table class="table table-condensed ">
+				<thead class="small bg-verde">
+				 	<tr>
+				 		<th>Favorecido</th>
+				 		<th>Valor</th>
+				 		<th>Período de oferta</th>
+				 	</tr>
+				 </thead>
+				 <tbody class="small">
+			 		<tr data-ng-repeat="s in allSales">
+				 		<td>{{s.TextoSnippet}}</td>
+				 		<td>R${{s.Preco}}</td>
+				 		<td>de {{s.DataInicio | dataBrasileiraSemHoras}} até {{s.DataFim | dataBrasileiraSemHoras}}</td>
+				 	</tr>
+			 	</tbody>
+			</table>
+		</div>
+
+		<div data-ng-show="logged">
+			<!-- Curso de onco I -->
+			<!-- <div data-ng-show="evento.ID != 2"> -->
+				<div class="col-md-7 no-padding-left">
+					<div class="compraSnippet box with-shadow-border box-success  padding-bottom col-md-6">
+						<p class="h4">Verifique os seguintes dados do seu cadastro: </p>
+						<div>
+	                        <label class="top-buffer text-muted ">Cursando graduação?</label> <input type="checkbox" data-ng-model="grad"
+	                    data-ng-change="RefreshSaleDisplay()">
+
+	                        <div class="input-group" style="width:100%">
+	                            <div class="col-sm-7 col-xs-8 no-padding-left no-padding-right">
+	                                <input
+	                                name="faculdade"
+	                                type="text"
+	                                class="form-control"
+	                                ng-model="user.faculdadeNome"
+	                                placeholder="Nome da faculdade"
+	                                data-ng-disabled="!grad"
+	                                style="border-radius: 12px;">
+	                            </div>
+	                            <div class="col-sm-5 col-xs-4 no-padding-right">
+	                                <input
+	                                name="faculdadeAno"
+	                                type="numberx"
+	                                class="form-control"
+	                                ng-model="user.faculdadeAno"
+	                                data-ng-disabled="!grad"
+	                                placeholder="Ano"
+	                                style="border-radius: 12px;">
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <label class="top-buffer text-muted">Associado a uma entidade Co-Irmã?</label>
+	                
+	                    <ol
+	                    class="form-control nya-bs-select "
+	                    data-ng-change="RefreshSaleDisplay()"
+	                    ng-model="user.coirmas" multiple>
+	                        <li class="nya-bs-option" data-value="abev">
+	                            <a>ABEV<span class="glyphicon glyphicon-ok check-mark"></span></a>
+	                        </li>
+	                        <li class="nya-bs-option" data-value="abravas">
+	                            <a>ABRAVAS<span class="glyphicon glyphicon-ok check-mark"></span></a>
+	                    </ol>
+
+					</div>
+				<!-- </div> -->
+			</div>
+
+			<!-- Curso de onco I -->
+			<div data-ng-show="evento.ID == 2">
+				<h2 class="lead">Nenhuma inscrição disponível no momento.</h2>
+			</div>
+
+
+
+			<!-- <div data-ng-show="evento.ID != 2"> -->
+				<!-- Associe -->
+				<div class="col-md-7 no-padding-left">
+					<div data-ng-show="user.TipoFavorecido != 1" class="compraSnippet box with-shadow-border box-success  padding-bottom col-md-6">
+						<p class="h4">Para obter maiores descontos associe-se na ABRV</p>
+						<input data-ng-readonly="true" type="text" class="form-control col-sm-6 top-buffer" value="R${{saleABRV.Preco}}">
+						<a ui-sref="associese">
+						<button class="btn btn-success bg-verde left-buffer top-buffer" >Associe-se</button></a>
+						<div>
+						<img class="left-buffer" src="images/logo_pagseguro200x41.png" style="width:100px">
+						</div>
+					</div>
+				</div>
+				<!--  -->
+			<!-- </div> -->
+
+			<div data-ng-repeat="sale in sales" class="col-md-7 no-padding-left">
+					<div data-ng-hide="user.TipoFavorecido != sale.Favorecido" class="compraSnippet box with-shadow-border box-success  padding-bottom col-md-6">
+						<p class="h4">{{sale.TextoSnippet}}</p>
+						<input data-ng-readonly="true" type="text" class="form-control col-sm-6 top-buffer" value="R${{sale.Preco}}">
+						<button data-ng-disabled="user.TipoFavorecido != sale.Favorecido" class="btn btn-success bg-verde left-buffer top-buffer" data-ng-click="subscribeNow(sale.ID)">Pagar inscrição</button>
+						<div>
+							<img class="left-buffer" src="images/logo_pagseguro200x41.png" style="width:100px">
+						</div>
+					</div>
+			</div>
+
+
+			
+
+
+		</div>
+
+		<div data-ng-show="!logged" >
+				
+			<div  data-ng-switch="logged"  ng-controller="loginCtrl" class="col-md-5" style="display: inline-block; vertical-align: middle; float: none;">
+		        <form class="form-signin  " name="form">
+		            <h3 class="form-signin-heading">Acesse sua conta ABRV</h3>
+		            <label data-ng-show="!logged" for="inputEmail"  class="sr-only">Email</label>
+		            <input data-ng-show="!logged" type="email" id="inputEmail" class="form-control" ng-model="email" placeholder="Email" required autofocus>
+		            <br>
+		            <label data-ng-show="!logged" for="inputPassword" class="sr-only">Senha</label>
+		            <input data-ng-show="!logged" type="password" id="inputPassword" class="form-control" ng-model="pass" placeholder="Senha" required>
+		            <br>
+		            <button data-ng-show="!logged"s class="btn bg-verde btn-lg btn-block" type="submit" data-ng-click="loginUser('rootRedirect')" style="color:white">Entrar</button>
+		            <br><br>
+		            <span data-ng-show="error"  class="error-message">{{errorMessage}}</span>
+		            <p data-ng-show="error" class=""><a ui-sref="resetPassword">Esqueci a senha</a></p>
+		        </form>
+		    </div>
+
+		    <div class="col-md-2" style="display: inline-block; vertical-align: middle; float: none;"> OU </div>
+
+		    <div class="col-md-4" style="display: inline-block; vertical-align: middle; float: none;">
+				<button class="btn  bg-verde btn-lg btn-block" ui-sref="associese" style="color:white">Cadastre-se na ABRV</button>
+		    </div>
+
+
+		</div>
+
+
+		<div class="row" data-ng-show="evento.HtmlConteudo">
+        		<div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Conteúdo</div>
+        		<div class="col-sm-12" data-ng-bind-html="evento.HtmlConteudo"></div>
+    	</div>
+
+
+    </div>
+
+    <div class="col-sm-4 hidden-xs" data-ng-show="evento.SideImagePath">
+    	<img src="{{evento.SideImagePath}}" class="img-responsive">
+    </div>
+     
+</div>

@@ -1,0 +1,133 @@
+
+<div class="container">
+   <!--  <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Painel</div>
+    </div> -->
+    <div class="row ">
+
+            <div ng-include="'templates/dashboard/dashboardNav.html'"></div>
+
+            <div>
+
+                <div class="col-sm-7">
+                    <div class="row">
+
+                        <div class="alert alert-default alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i>Curso de Oncologa I: Inscrições online encerradas</h4>
+                            <p>As incrições online para o curso de Oncologia I estão encerradas.</p>
+                            <p>Ainda é possível se inscrever diretamente no local.</p>
+
+                        </div>
+                        <div data-ng-show="user.Status == 0" class="alert alert-default alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="icon fa fa-ban"></i> Atenção!</h4>
+                            <p>Caso você tenha interesse em pagar a anuidade de 2016. Por favor, clique no botão para renovar.</p>
+                            <button type="button" class="btn btn-success btn-verde top-buffer" ui-sref="renovarAnuidade">Renovar</button>
+
+                        </div>
+
+                        <div data-ng-show="user.Status == 1 && user.Tipo != 3 " class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="fa fa-calendar-check-o"></i> Anuidade ABRV</h4>
+                            <p>Sua anuidade está em dia e continuará válida até dia 31 de Março de 2017.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="alert alert-info alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <h4><i class="fa fa-list"></i></i> Próximos Eventos</h4>
+                            <div data-ng-show="eventos.length>0">
+                                <ul data-ng-repeat="event in eventos">
+                                    <li>
+                                    <a ui-sref="evento({id: event.ID, slug: event.slug})" style="color:white">
+
+                                        {{event.Name}}
+
+                                    </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-ng-show="eventos.length==0">
+                                <p>Nenhum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 ">
+                    <div class="box box-success with-shadow-border">
+                        <div class="row">
+                            <div class="box-body">
+                                <h2 class="box-header font-verde">Perfil</h2>
+                                <div class="col-sm-12 bottom-buffer">
+                                    <label class="font-verde">Nome</label>
+                                    <p>{{user.Nome}}</p>
+                                </div>
+                                <div class="col-sm-12 bottom-buffer">
+                                    <label class="font-verde">Email</label>
+                                    <p>{{user.Email}}</p>
+                                </div>
+                                <!-- 
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">CPF</label>
+                                    <p>{{user.CPF}}</p>
+                                </div>
+                                 -->
+                                <div class="col-sm-12 bottom-buffer">
+                                    <label class="font-verde">Modalidade</label>
+                                    <p>{{user.Tipo | tipoMembro}}</p>
+                                </div>
+
+                                <!-- 
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">Telefone</label>
+                                    <p data-ng-show="user.Telefone != 0">({{user.Tel_DDD}}) {{user.Telefone}}</p>
+                                    <p data-ng-show="user.Telefone == 0">Nenhum</p>
+                                </div>
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">Celular</label>
+                                    <p>({{user.Cel_DDD}}) {{user.Cel}}</p>
+                                </div>
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">CRMV</label>
+                                    <p>{{user.CRMV | uppercase}}</p>
+                                </div>
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">Especialidades</label>
+                                    <p data-ng-show="user.especialidades.length == 0">Nenhuma</p>
+                                    <p>{{user.Especialidade}}</p>
+                                    <ul style="padding: 0;list-style-type: none;">
+                                        <li data-ng-hide="user.especialidades.length == 0" data-ng-repeat="e in user.especialidades" >{{e | espFilter}}</li>
+
+                                    </ul>
+                                </div> -->
+                                
+                                <!-- <div class="col-sm-12"><hr></div> -->
+                                <!-- 
+                                <div class="col-sm-6 bottom-buffer">
+                                    <label class="font-verde">Endereço</label>
+                                    <ul style="padding: 0;list-style-type: none;">
+                                        <li>{{user.Endereco}}, {{user.Numero}}, {{user.Complemento}}</li>
+                                        <li>{{user.Bairro}}, {{user.Cidade}}-{{user.Estado | uppercase}}, {{user.CEP}}</li>
+                                    </ul>
+                                </div>
+                                -->
+                                <div class="col-sm-12"></div>
+
+                                <div class="col-sm-6 bottom-buffer">
+                                </div>
+                                <div class="col-sm-6 bottom-buffer">
+                                    <button class="btn form-control bg-verde" ui-sref="atualizarDados">Editar Perfil</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        
+    </div>
+</div>

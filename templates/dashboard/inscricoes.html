@@ -1,0 +1,30 @@
+
+<div class="container">
+<!--     <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Inscrições</div>
+    </div> -->
+    <div class="row homeBlock">
+        <div ng-include="'templates/dashboard/dashboardNav.html'"></div>
+
+        <div class="col-sm-7 no-buffer-left">
+
+        	<div data-ng-repeat="subs in subscriptions">
+                	<h3 class="font-verde">{{subs.Name}}</h3>
+                	<p>Codigo de inscrição: {{subs.SubscriptionCode | uppercase}}</p>
+                    <div data-ng-show="subs.SubscriptionStatus == 1">
+                        <p>Valor pago: R${{subs.PagamentoValor}}</p>
+                        <p>Status: {{subs.SubscriptionStatus | statusInscricao }}</p>
+                    </div>
+                    <div data-ng-show="subs.SubscriptionStatus == 0">
+                        <p>Inscrição em avaliação</p>
+                	</div>
+                	<hr>
+        	</div>
+
+        	<div data-ng-show="subscriptions.length == 0">
+        		<h3 class="font-verde">Nenhuma inscrição disponível no momento.</h3>
+        	</div>
+        </div>
+        
+    </div>
+</div>

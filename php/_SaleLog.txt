@@ -1,0 +1,60 @@
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Desconto | Preco: 190.00
+ID: 1 | Titulo: Anuidade 2016 | Renovação | Preco: 193.50
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00
+ID: 1 | Titulo: Anuidade 2016 | Preco: 215.00

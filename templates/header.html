@@ -1,0 +1,16 @@
+<div ng-if="!AuthenticationService.loggedIn" ng-include="'templates/logBar.html'"></div>
+<div ng-if="AuthenticationService.loggedIn" ng-include="'templates/loggedBar.html'"></div>
+<div class="container headerImage">
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
+		    <a ui-sref="home">
+		        <img alt="Brand" src="images/logo.png" class="img-responsive">
+		    </a>
+		</div>
+		<div class="col-xs-6">
+		    <div class="pull-right hide-on-phone hidden-xs"><img src="images/DogRX_header.png" class="img-responsive"></div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'templates/nav.html'"></div>

@@ -1,0 +1,13 @@
+<div class="container bottom-buffer">
+    <div class="row">
+        <div class="col-sm-12 no-padding-left no-padding-right">
+            <div class="barraTitulo bg-verdeEscuro">{{noticia.Titulo}}</div>
+            	<div class="row ">
+            		<div class="col-sm-6 left-buffer right-buffer">
+			            <div class="text-muted fonte-data top-buffer">{{noticia.Data | dataBrasileira}}, publicado por {{noticia.Autor}}</div>
+			            <div class=" top-buffer" ng-bind-html="noticia.Texto"></div>
+		            </div>
+		        </div>
+        </div>
+    </div>
+</div>

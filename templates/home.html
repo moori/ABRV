@@ -1,0 +1,216 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 no-padding-left">
+            <div class="panel rounded-all bg-verdeEscuro no-buffer-left" style="padding: 15px">
+                
+                
+                <!-- <div ng-controller="CarouselDemoCtrl"> -->
+                  <!-- <div style="height: 390px"> -->
+                  <div class="carousel-wrapper">
+                    <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+                      <uib-slide ng-repeat="slide in slides" active="slide.active"><!-- 
+                        <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto; height:390px"> -->
+
+                        <div data-ng-show="slide.link != null">
+                            <a ui-sref="{{slide.link}}" ><img ng-src="{{slide.image}}" class="img-responsive" style=""></a>
+                        </div>
+                        <div data-ng-show="slide.externalLink != null">
+                            <a data-ng-href="{{slide.externalLink}}" target="_blank"><img ng-src="{{slide.image}}" class="img-responsive" style=""></a>
+                        </div>
+                        <!-- <div class="carousel-caption"> -->
+                          <!-- <h4>Slide {{$index}}</h4> -->    
+                            <!-- <p><a href="#/{{$index}}">{{slide.text}}</a></p> -->
+                        <!-- </div> -->
+                      </uib-slide>
+                    </uib-carousel>
+                  </div>
+                <!-- </div> -->
+                
+                
+            </div>
+        </div>
+        
+        <div class="col-md-5 homeBlock">
+            <a ui-sref="noticias"><h1 class="font-titulo">Notícias</h1></a>
+            <div ng class="noticiaWidget" ng-repeat="n in noticias | orderBy:ID:true | limitTo:2">
+                <a href="#/noticia{{n.ID}}"><h2 class="font-titulo">{{n.Titulo}}</h2></a>
+                <!-- <div class="noticiaFeedText"  ng-bind-html="noticia.Texto">{{n.Texto | characters:120}}</div> -->
+                <div class="noticiaFeedText visible-lg"  ng-bind-html="n.Texto | characters:200"></div>
+                <div class="noticiaFeedText visible-md"  ng-bind-html="n.Texto | characters:100"></div>
+                <div class="noticiaFeedText visible-sm"  ng-bind-html="n.Texto | characters:450"></div>
+                <div class="noticiaFeedText visible-xs"  ng-bind-html="n.Texto | characters:400"></div>
+                <a href="#/noticia{{n.ID}}">Continue lendo...</a>
+                <hr style="border-top: 1px dotted #71ad65;">
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-padding-left">
+        <div class="col-sm-7 no-padding-left">
+            <div class="homeBlock no-buffer-left">
+                <div class="barraTitulo bg-verdeEscuro">Próximos Cursos</div>
+
+                <div class="row left-buffer">
+                    <div class="col-sm-4 no-buffer-left no-padding-left top-buffer">
+                        <img style="cursor: pointer" ui-sref="evento({id: 3, slug: 'Curso_de_oncologia_II'})" src="images/eventos/oncologia-emproximos-cursos.png" class="img-responsive" width="100%" height="100%">
+                      <!--   <div style="background:url('images/thumb.png')no-repeat; height:120px; width:90px"></div> -->
+                    </div>
+                    <div class="col-sm-8 top-buffer">
+                        <h4 style="cursor: pointer" class="font-titulo no-buffer-top"  ui-sref="evento({id: 3, slug: 'Curso_de_oncologia_II'})">Diagnóstico por imagem na Oncologia </h4>
+                        <!-- <div class="noticiaFeedText"  ng-bind-html="n.Texto | characters:240"></div> -->
+                        <div class="">parte II (dia 28 de agosto)<br>
+                            <a ui-sref="evento({id: 3, slug: 'Curso_de_oncologia_II'})">Inscreva-se já</a>
+                        </div>
+                        <!-- <a href="">Continue lendo... {{n.ID}}</a> -->
+                    </div>
+                </div>
+
+                <div class="row left-buffer right-buffer">
+                    <hr style="border-top: 1px dotted #71ad65;">
+                </div>
+
+                <div class="row left-buffer">
+                    <div class="col-sm-4 no-buffer-left no-padding-left top-buffer">
+                        <img src="images/thumb.png" class="img-responsive" width="100%" height="100%">
+                      <!--   <div style="background:url('images/thumb.png')no-repeat; height:120px; width:90px"></div> -->
+                    </div>
+                    <div class="col-sm-8 top-buffer">
+                        <h4 class="font-titulo no-buffer-top">Em breve mais cursos e eventos</h4>
+                        <!-- <div class="noticiaFeedText"  ng-bind-html="n.Texto | characters:240"></div> -->
+                        <div class="">A ABRV reserva-se o direito de alterar a data, horários, local, programação ou mesmo cancelamento do evento de acordo com o número de participantes.</div>
+                        <!-- <a href="">Continue lendo... {{n.ID}}</a> -->
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="col-sm-5 no-buffer-right">
+           
+            <div class="panel bg-verdeEscuro vcenter" style=" border-radius:8px; vertical-align:middle">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <a ui-sref="associese">
+                                <!-- <img src="http://placehold.it/800x400" class="img-responsive" style="padding:15px;"> -->
+                                <img src="images/assocBtn.png" class="img-responsive" style="padding:15px;">
+                            </a>
+                          
+                            <!-- <div class="carousel-caption center">
+                                <h2>Associe-se</h2>
+                            </div> -->
+                        </div>
+                      
+                     </div>
+                 </div>
+
+
+            </div>
+
+
+         
+            <!-- Layout com 2 patrocinadores -->
+           <!--  <div class="panel rounded-all painel-patrocinadores">    
+                <div class="barraTitulo bg-verdeEscuro" style="border-radius: 8px 8px 0 0 ">Patrocinadores</div>
+                    <div class="homeBlock panel">
+                        <div class="row">
+                            <div class="col-sm-6" style="padding-top:35px">
+                                <img src="images/logo2.jpg" class="img-responsive">
+                            </div>
+                            <div class="col-sm-6" style="padding-top:35px">
+                                <img src="images/logo2.jpg" class="img-responsive">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Fim do layout com dois Patrocinadores -->
+
+            <!-- Layout com 2 patrocinadores -->
+            <div class="panel rounded-all painel-patrocinadores">    
+                <div class="barraTitulo bg-verdeEscuro" style="border-radius: 8px 8px 0 0 ">Patrocínio e Apoio</div>
+                    <div class="homeBlock panel">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2" style="padding-top:25px">
+                                <img src="images/logo2.jpg" class="img-responsive">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fim do layout com dois Patrocinadores -->
+
+
+    </div>
+
+<!-- 
+    <div class="row no-buffer-left no-buffer-right">
+        <div class="col-sm-12 no-buffer-left no-buffer-right">
+            <div class="homeBlock no-buffer-left no-buffer-right">
+                <div class="barraTitulo bg-verdeEscuro">Artigos</div>
+                <div class="row left-buffer right-buffer">
+                    <div class="col-sm-6 no-buffer-right no-buffer-left top-buffer">
+                        
+
+                        <div class="row">
+                            <div class="col-sm-4 top-buffer">
+                                <img src="images/thumb.png" class="img-responsive" width="100%" height="100%">
+                            </div>
+                            <div class="col-sm-8 top-buffer">
+                                <h4 class="font-titulo">Radiologia Veterinária</h4>
+                                <div class="">A ABRV reserva-se o direito de alterar a data, horários, local, programação ou mesmo cancelamento do evento de acordo com o número de participantes.</div>
+                                <a href="#/noticia{{n.ID}}">Continue lendo... {{n.ID}}</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-6 no-buffer-right no-buffer-left  top-buffer">
+                        
+                        <div class="row left-buffer">
+                            <div class="col-sm-4 no-buffer-right no-buffer-left top-buffer">
+                                <img src="images/thumb.png" class="img-responsive" width="100%" height="100%">
+                            </div>
+                            <div class="col-sm-8 top-buffer">
+                                <h4 class="font-titulo">Radiologia Veterinária</h4>
+                                <div class="">A ABRV reserva-se o direito de alterar a data, horários, local, programação ou mesmo cancelamento do evento de acordo com o número de participantes.</div>
+                                    <a href="#/noticia{{n.ID}}">Continue lendo... {{n.ID}}</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+ -->
+
+
+
+
+
+<!-- 
+    <div class="row no-buffer-left no-buffer-right">
+        <div class="col-sm-12 no-buffer-left no-buffer-right">
+            <div class="barraTitulo bg-verdeEscuro">Artigos</div>
+            <div class="row">
+                <div class="col-sm-6 left-buffer right-buffer">
+                    <p>fadfadfafdafadfdfaf afad fadf adf adf ad fad fad f adf adf adf ad fad fad fadf
+                    afad fad fad fadfa dfa
+                    </p>
+                </div>
+                <div class="col-sm-6 left-buffer right-buffer">
+                    <p>fadfadfafdafadfdfaf afad fadf adf adf ad fad fad f adf adf adf ad fad fad fadf
+                    afad fad fad fadfa dfa
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+     -->
+    
+</div>

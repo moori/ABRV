@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+		<div class="barraTitulo bg-verdeEscuro">Fale Conosco</div>
+		<div class="col-sm-6 col-md-4">
+			<form name="messageForm" data-ng-model="mForm" data-ng-submit="sendComment()">
+				<label class="top-buffer text-muted">Nome</label>
+	            <input name="nome" type="text" class="form-control" ng-model="comment.nome" ng-required="true">
+	            
+				<label class="top-buffer text-muted">Email</label>
+	            <input name="email" type="email" class="form-control" ng-model="comment.email"  ng-required="true">
+	            
+				<label class="top-buffer text-muted">Telefone</label>
+	            <input name="telefone" type="text" class="form-control" ng-model="comment.telefone" ng-required="true">
+	            
+				<label class="top-buffer text-muted">Assunto</label>
+	            <input type="text" class="form-control" ng-model="comment.assunto">
+	            
+				<label class="top-buffer text-muted">Mensagem</label>
+	            <!-- <input type="text" class="form-control" ng-model="comment.mensagem"> -->
+	            <textarea name="mensagem" type="text" style="height:300px"  class="form-control" ng-model="comment.mensagem" ng-required="true">  </textarea>
+
+	        	<button
+	        	type="submit"
+	        	class="btn btn-success bg-verde top-buffer bottom-buffer"
+	        	data-ng-disabled="messageForm.nome.$error.required || messageForm.email.$error.required || messageForm.email.$error.email || messageForm.telefone.$error.required || messageForm.mensagem.$error.required"
+	        	align="center">Enviar</button>
+	        	<span data-ng-show="loading" class="font-verde">Carregando...</span>
+	        	<p data-ng-show="sent" class="font-verde">Mensagem enviada em {{sentTime}}</p>
+	        	<p class="text-danger" data-ng-show="messageForm.nome.$error.required && messageForm.nome.$dirty">Insira o seu nome</p>
+	        	<p class="text-danger" data-ng-show="messageForm.email.$error.required && messageForm.email.$dirty">Insira o seu email</p>
+	        	<p class="text-danger" data-ng-show="messageForm.email.$error.required && messageForm.email.$dirty">Email inválido</p>
+	        	<p class="text-danger" data-ng-show="messageForm.telefone.$error.required && messageForm.telefone.$dirty">Insira o seu telefone</p>
+	        	<p class="text-danger" data-ng-show="messageForm.mensagem.$error.required && messageForm.mensagem.$dirty">Escreva uma mensagem</p>
+	        </form>
+
+
+		</div>
+
+		<div class="col-sm-6 col-md-8  top-buffer no-padding-right hidden-xs">
+			<div class="panel rounded-all bg-verdeEscuro no-buffer-left" style="padding: 15px">
+				<img src="images/dog-08.jpg" class="img-responsive">
+			</div>
+		</div>
+
+
+		
+	</div>
+
+</div>
+

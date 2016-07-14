@@ -1,0 +1,455 @@
+<div class="container" style="height:900px">
+<!--     <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Atualizar Dados</div>
+    </div> -->
+
+      
+
+
+    <div class="row homeBlock bottom-buffer">
+
+        <div data-ng-show="waitingConfirmation" class="row">
+        <!-- <div  class="row"> -->
+            <div class="col-sm-4 col-sm-offset-2 alert">
+                <h2 class="font-verde">Dados Atualizados.</h2>
+                <p style="height:200px">Os dados do usuário foram atualizados com sucesso.</p>
+            </div>
+        </div>  
+
+        <form name="userForm" data-ng-model="mForm" data-ng-submit="updatesignUpInfoData(signUpInfo)">
+        <div data-ng-hide="waitingConfirmation" class="row homeBlock">
+
+            <div class="col-sm-12 no-buffer-left">
+                <div data-ng-show="signUpInfo.ativo==0">
+                    <p>Membro não autenticado.<br>
+                    O endereço de autenticação enviado ao usuário é:<br>
+                    http://www.abrv.org.br/#/activation/{{signUpInfo.auth}}</p>
+                    <p>Também é possível autenticar o usuário no formulário abaixo</p>
+                </div>
+                <p data-ng-show="signUpInfo.ativo==1">Membro Autenticado em {{signUpInfo.dateCreated | dateTimeBR}}.</p>
+                <p data-ng-show="signUpInfo.dateModified!=null">Dados atualizados em {{signUpInfo.dateModified | dateTimeBR}}.</p>
+            </div>
+
+            <div class=" col-sm-6 col-md-4 no-buffer-left">
+                    <label class=" text-muted">Nome Completo</label>
+                    <input
+                    name="nome"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.nome.$dirty &&  userForm.nome.$error.required}"
+                    ng-model="signUpInfo.nome"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Endereço</label>
+                    <input
+                    name="endereco"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.endereco.$dirty &&  userForm.endereco.$error.required}"
+                    ng-model="signUpInfo.endereco"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+
+                    <label class="top-buffer text-muted">Número</label>
+                    <input
+                    name="numero"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.numero.$dirty &&  userForm.numero.$error.required}"
+                    ng-model="signUpInfo.end_numero"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+
+                    <label class="top-buffer text-muted">Complemento</label>
+                    <input
+                    name="complemento"
+                    type="text"
+                    class="form-control"
+                    ng-model="signUpInfo.end_complemento"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Bairro</label>
+                    <input
+                    name="bairro"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.bairro.$dirty &&  userForm.bairro.$error.required}"
+                    ng-model="signUpInfo.bairro"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Cidade</label>
+                    <input 
+                    name="cidade"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.cidade.$dirty &&  userForm.cidade.$error.required}"
+                    ng-model="signUpInfo.cidade"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Estado</label>
+
+                    <!-- <ol
+                    name="estado"
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.estado"
+                    data-ng-disabled="true">
+
+                        <div ng-repeat-start="estado in estados"></div>
+                            <li class="nya-bs-option" data-value="{{estado.valor}}">
+                                <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                            </li>
+
+                        <div ng-repeat-end=""></div>
+                    </ol> -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    ng-model="signUpInfo.estado"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Status</label>
+
+                    <ol
+                    name="status"
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.stat">
+
+                        <div ng-repeat-start="s in statusList"></div>
+                            <li class="nya-bs-option" data-value="{{s.valor}}">
+                                <a>{{s.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                            </li>
+
+                        <div ng-repeat-end=""></div>
+                    </ol>
+
+                    <label class="top-buffer text-muted">Autenticação</label>
+
+                    <ol
+                    name="ativo"
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.ativo">
+
+                        <div ng-repeat-start="ativo in ativoList"></div>
+                            <li class="nya-bs-option" data-value="{{ativo.valor}}">
+                                <a>{{ativo.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                            </li>
+
+                        <div ng-repeat-end=""></div>
+                    </ol>
+
+                    <span data-ng-show="loading" class="pull-right hidden-xs" style="margin-top: 45px;">carregando <i class="fa fa-spinner fa-spin text-success fa-2x"></i></span>
+
+                    <!-- <span class="pull-right hidden-xs" style="margin-top: 36px;">*Campos obrigatórios</span> -->
+                </div>
+                
+                <div class="col-sm-6 col-md-4 no-buffer-left">
+
+                    <label class=" text-muted">Telefone</label>
+                    <div class="input-group" style="width:100%">
+                        <div class="col-sm-3 col-xs-4 no-padding-left">
+                            <input
+                            name="tel_ddd"
+                            type="text"
+                            class="form-control"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="DDD ex. '11'"
+                            ng-model="signUpInfo.tel_ddd"
+                            ng-required="false"
+                            placeholder="DDD"
+                            data-ng-class="{inputDanger:userForm.telefone.$dirty && (userForm.telefone.$error.pattern || userForm.telefone.$error.maxlength )}"
+                            ng-pattern="/^([0-9]{2})$/"
+                            ng-maxlength="2";
+                            data-ng-disabled="true">
+                        </div>
+
+                         <div class="col-sm-9 col-xs-8 no-padding-left no-padding-right">
+                            <input
+                            name="telefone"
+                            type="text"
+                            class="form-control"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            placeholder="Somente números"
+                            title="ex. 32198765"
+                            ng-model="signUpInfo.telefone"
+                            ng-required="false"
+                            data-ng-class="{inputDanger:userForm.telefone.$dirty &&  (userForm.telefone.$error.pattern)}"
+                            ng-pattern="/^[0-9]*$/"
+                            ng-minlength="8"
+                            data-ng-disabled="true">
+                        </div>
+                    </div>
+
+                    <label class="top-buffer text-muted">Celular</label>
+                    <div class="input-group" style="width:100%">
+                        <div class="col-sm-3 col-xs-4 no-padding-left">
+                            <input
+                            name="cel_ddd"
+                            type="text"
+                            class="form-control"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="DDD ex. '11'" 
+                            ng-model="signUpInfo.cel_ddd"
+                            ng-required="true"
+                            data-ng-class="{inputDanger:userForm.cel_ddd.$dirty &&  (userForm.cel_ddd.$error.required || userForm.cel_ddd.$error.pattern || userForm.cel_ddd.$error.maxlength)}"
+                            placeholder="DDD"
+                            ng-pattern="/^[0-9]*$/"
+                            ng-maxlength="2"
+                            data-ng-disabled="true">
+                        </div>
+                        <div class="col-sm-9 col-xs-8 no-padding-left no-padding-right">
+                            <input
+                            name="celular"
+                            type="text"
+                            class="form-control"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="ex. 987651234"
+                            ng-model="signUpInfo.celular"
+                            data-ng-class="{inputDanger:userForm.celular.$dirty &&  (userForm.celular.$error.required || userForm.celular.$error.pattern || userForm.cel_ddd.$error.maxlength || userForm.cel_ddd.$error.minlength)}"
+                            ng-required="true"
+                            ng-pattern="/^[0-9]*$/"
+                            placeholder="Somente números"
+                            ng-minlength="8"
+                            ng-maxlength="9"
+                            data-ng-disabled="true">
+                        </div>
+                    </div>
+
+
+
+                    <label class="top-buffer text-muted">CRMV</label>
+                    <div class="input-group" style="width:100%">
+                        <div class="col-sm-7 col-xs-8 no-padding-left no-padding-right">
+                            <input
+                            name="crmv"
+                            type="text"
+                            class="form-control"
+                            ng-model="signUpInfo.crmv"
+                            data-ng-class="{inputDanger:userForm.crmv.$dirty &&  userForm.crmv.$error.required}"
+                            ng-required="true"
+                            placeholder="ex. 1234"
+                            data-ng-disabled="true">
+                        </div>
+                        <div class="col-sm-5 col-xs-4 no-padding-right">
+
+                            <!-- <ol
+                            name="CRMVestado"
+                            class="form-control nya-bs-select"
+                            data-ng-class="{inputDanger:userForm.CRMVestado.$error.required}"
+                            ng-model="signUpInfo.crmvEstado"
+                            data-ng-disabled="true">
+                                <div ng-repeat-start="estado in estados"></div>
+                                <li class="nya-bs-option" data-value="{{estado.valor}}">
+                                    <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                                </li>
+
+                                <div ng-repeat-end=""></div>
+                            </ol> -->
+                            <input
+                            type="text"
+                            class="form-control"
+                            ng-model="signUpInfo.crmvEstado"
+                            ng-required="true"
+                            data-ng-disabled="true">
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <label class="top-buffer text-muted ">Email</label>
+                    <input
+                    name="email"
+                    type="email"
+                    class="form-control"
+                    ng-model="signUpInfo.email"
+                    data-ng-class="{inputDanger:userForm.email.$dirty &&  (userForm.email.$error.required || !userForm.email.$valid)}"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+                    <label class="top-buffer text-muted">Especialidade</label>
+                    
+                    <!-- <ol
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.especialidades" multiple data-ng-disabled="true" disabled>
+                        <li class="nya-bs-option" data-value="radiologia">
+                            <a>Radiologia<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="ultrassom">
+                            <a>Ultrassonografia<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="tomografia">
+                            <a>Tomografia Computadorizada<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="ressonancia">
+                            <a>Imagem por Ressonância Magnética<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                    </ol> -->
+                    <input
+                    type="text"
+                    class="form-control"
+                    ng-model="signUpInfo.especialidades"
+                    ng-required="true"
+                    data-ng-disabled="true">
+
+
+                    <label class="top-buffer text-muted">CPF</label>
+                    <input
+                    name="cpf"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.cpf.$dirty &&  (userForm.cpf.$error.required || errorMessage.cpfInvalido || userForm.cpf.$error.maxlength)}"
+                    ng-model="signUpInfo.cpf"
+                    data-ng-change="validateCPF(signUpInfo.cpf)"
+                    ng-required="true"
+                    placeholder="Somente números"
+                    ng-maxlength="11"
+                    data-ng-disabled="true">
+
+
+                    <label class="top-buffer text-muted">CEP</label>
+                    <input
+                    name="cep"
+                    type="text"
+                    class="form-control"
+                    data-ng-class="{inputDanger:userForm.cep.$dirty &&  (userForm.cep.$error.pattern || userForm.cep.$error.maxlength || userForm.cep.$error.minlength)}"
+                    ng-model="signUpInfo.cep"
+                    placeholder="Somente números"
+                    ng-required="true"
+                    ng-pattern="/^[0-9]*$/"
+                    ng-maxlength="8"
+                    ng-minlength="8"
+                    placeholder="ex. 04127000 "
+                    data-ng-disabled="true">
+
+
+                    <label class="top-buffer text-muted">Modalidade</label>
+
+                    <ol
+                    name="modalidade"
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.tipo">
+
+                        <div ng-repeat-start="modalidade in modalidades"></div>
+                            <li class="nya-bs-option" data-value="{{modalidade.valor}}">
+                                <a>{{modalidade.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                            </li>
+
+                        <div ng-repeat-end=""></div>
+                    </ol>
+
+                    <button
+                    name="btnSubmit"
+                    type="submit"
+                    data-ng-click="showErrors=true"
+                    class="btn btn-success bg-verde top-buffer"
+                    align="center"
+                    style="width:100%; margin-top:24px">Atualizar Dados</button>
+
+                    <!-- <button
+                    name="btnSubmit"
+                    class="btn btn-success bg-verde top-buffer"
+                    align="center"
+                    style="width:100%; margin-top:40px"
+                    disabled>Em construção</button> -->
+                
+                <!-- <span class="pull-right hidden-md hidden-lg hidden-sm" style="margin-top: 40px;">*Campos obrigatórios</span> -->
+                
+            </div>
+            
+
+            <div class="row">
+                <div class="panel col-sm-3 alert">  
+                    <h3>Opções</h3>
+
+                    <div class="col-sm-12"> 
+
+                        <button
+                        name="deleteUser"
+                        class="btn btn-danger bg-verde top-buffer"
+                        align="center"
+                        style="width:100%;"
+                        data-ng-click="confirmDelete()">Deletar Usuario</button>
+
+                    </div>
+                </div>
+            </div> 
+
+
+
+
+            
+        </div>
+    </form>
+
+    <!-- <div data-ng-hide="waitingConfirmation" class="row"> -->
+    <div data-ng-show="showErrors && !waitingConfirmation" class="row">
+        <div class="col-sm-8 ">
+            <div class="text-danger pull-right">
+                <ul style="list-style-type: none; text-align:right;">
+                    <!-- <li data-ng-show="error">{{errorMessage.emailRegistrado}}</li> -->
+                    <!-- <li data-ng-show="error">{{errorMessage.loginIncorreto}}</li> -->
+                    <li data-ng-show="error">{{errorMessage.cpfInvalido}}</li>
+                    <li data-ng-show="error">{{errorMessage.senhaDiferente}}</li>
+                    <!-- <li data-ng-show="error">{{errorMessage.incompleto}}</li> -->
+
+                    <li class="error-message" data-ng-show="userForm.nome.$error.required">Insira o Nome</li>
+                    <li class="error-message" data-ng-show="userForm.email.$error.required">Insira o Email</li>
+                    <li class="error-message" data-ng-show="userForm.email.$error.email">Email inválido</li>
+                    <li class="error-message" data-ng-show="userForm.endereco.$error.required">Insira um Endereco</li>
+                    <li class="error-message" data-ng-show="userForm.numero.$error.required">Insira o Número de Endereço</li>
+                    <li class="error-message" data-ng-show="userForm.bairro.$error.required">Insira o Bairro</li>
+                    <li class="error-message" data-ng-show="userForm.cidade.$error.required">Insira a Cidade</li>
+                    <li class="error-message" data-ng-show="userForm.estado.$error.required">Insira o Estado</li>
+                    <li class="error-message" data-ng-show="userForm.cep.$error.required">Insira o CEP</li>
+
+                    <li class="error-message" data-ng-show="userForm.crmv.$error.required">Insira o CRMV</li>
+                    <li class="error-message" data-ng-show="userForm.cpf.$error.required">Insira o CPF</li>
+                    <li class="error-message" data-ng-show="userForm.cpf.$error.maxlength">O CPF deve conter 11 Dígitos</li>
+
+                    <li class="error-message" data-ng-show="userForm.celular.$error.required">Insira o número de Celular</li>
+                    <li class="error-message" data-ng-show="userForm.cel_ddd.$error.pattern">DDD do celular inválido</li>
+                    <li class="error-message" data-ng-show="userForm.cel_ddd.$error.maxlength">DDD do celular deve possuir somente dois dígitos</li>
+                    <li class="error-message" data-ng-show="userForm.celular.$error.pattern">Número do celular inválido</li>
+                    <li class="error-message" data-ng-show="userForm.celular.$error.minlength">Número do celular muito curto</li>
+                    <li class="error-message" data-ng-show="userForm.celular.$error.maxlength">Número do celular muito longo</li>
+
+                    <!-- <li class="error-message" data-ng-show="userForm.telefone.$error.required">Insira um Telefone</li> -->
+                    <li class="error-message" data-ng-show="userForm.tel_ddd.$error.pattern">DDD do telefone inválido</li>
+                    <li class="error-message" data-ng-show="userForm.tel_ddd.$error.maxlength">DDD do telefone deve possuir somente dois dígitos</li>
+                    <li class="error-message" data-ng-show="userForm.telefone.$error.pattern">Número do telefone inválido</li>
+                    <li class="error-message" data-ng-show="userForm.telefone.$error.minlength">Número do telefone muito curto</li>
+                    <li class="error-message" data-ng-show="userForm.telefone.$error.maxlength">Número do telefone muito longo</li>
+
+                    <li class="error-message" data-ng-show="errorMessage.usuarioRegistrado">Usuário já registrado</li>
+
+
+                    <li class="error-message" data-ng-show="(userForm.cep.$error.pattern || userForm.cep.$error.maxlength || userForm.cep.$error.minlength)">CEP inválido</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+     
+
+    
+        
+</div>

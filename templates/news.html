@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Notícias</div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 no-buffer-left no-buffer-right">
+
+            <div ng-repeat="n in noticias | orderBy:ID:true">
+                <div>
+                    <div class="box with-shadow-border box-success">
+                        <div class="right-buffer left-buffer">
+                            <a href="#/noticia/{{n.ID}}/{{n.Titulo}}"><h2 class="font-titulo">{{n.Titulo}}</h2></a>
+                            <p class="text-muted bottom-buffer small">{{n.Data | dataBrasileira}}, publicado por {{n.Autor}}</p>
+                            <div ng-bind-html="n.Texto | characters:500"></div>
+                            <p><a href="#/noticia/{{n.ID}}/{{n.Titulo}}">Continue lendo...</a></p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

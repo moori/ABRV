@@ -1,0 +1,49 @@
+<div class="container">
+<!--     <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Renovar Anuidade</div>
+    </div> -->
+    <div class="row homeBlock">
+
+		<div ng-include="'templates/dashboard/dashboardNav.html'"></div>
+
+        <div class="col-sm-7">
+            <div class="box with-shadow-border box-success">
+
+                <!-- Caixa de Pagamento -->
+
+                <div data-ng-show="user.Status == 0" class="box-body">
+                    <h2 class="no-buffer-top">Anuidade ABRV 2016</h2>
+                    <p class="bottom-buffer">Para completar o processo e se tornar um associado, clique no botão abaixo e finalize o pagamento</p><p class="bottom-buffer">O valor da anuidade é de R$215,00 com desconto de 10% até dia 31/03/2016.</p>
+                    <!-- <div class="row"> -->
+                        <button class="btn bg-verde btn-md btn-pagSeguro" role="button" ng-click="request()">Pagar</button>
+                        <span data-ng-show="loading" class="text-muted"> Carregando <i class="fa fa-spinner fa-spin text-success fa-2x"></i></span>
+                        <span data-ng-show="showWait" class="text-muted"> Após o pagamento, aguarde o processamento da sua aprovação</span>
+                        <br><img class="left-buffer" src="images/logo_pagseguro200x41.png" style="width:100px">
+                        
+                    <!-- </div> -->
+                </div>
+
+                <div data-ng-show="user.Status == 1 && user.Tipo ==1" class="box-body">
+                    <h2 class="no-buffer-top">Anuidade ABRV 2016</h2>
+                    <p class="bottom-buffer">Sua anuidade está em dia e continuará válida até dia <b>31 de Março de 2017</b>.</p>
+                    <!-- </div> -->
+                </div>
+
+                <div data-ng-show="user.Tipo == 2" class="box-body">
+                    <h2 class="no-buffer-top">Anuidade ABRV 2016</h2>
+                    <p class="bottom-buffer">O associado honorário é isento das taxas de manutenção anuais.</p>
+                    <!-- </div> -->
+                </div>
+
+                <div data-ng-show="user.Tipo == 3" class="box-body">
+                    <h2 class="no-buffer-top">Anuidade ABRV 2016</h2>
+                    <p class="bottom-buffer">O associado benemérito é isento das taxas de manutenção anuais.</p>
+                    <!-- </div> -->
+                </div>
+
+
+            </div>
+        </div>
+        
+    </div>
+</div>

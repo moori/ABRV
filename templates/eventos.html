@@ -1,0 +1,21 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Eventos</div>
+    </div>
+    <div class="col-sm-8 no-padding-left">
+
+		<!-- TODO: Banco -->
+		<div data-ng-repeat="e in eventos">
+			<div class="box with-shadow-border box-success">
+				<div class="box-body">
+					<h4 style="color: #51683f;"><strong>{{e.Name}}</strong></h4><br />
+					<p data-ng-bind-html="e.Html"></p>
+					<button class="btn btn-success bg-verde" data-ng-click="subscribeNow(e)">Inscreva-se Já</button>
+				</div>
+			</div>
+		</div> 
+
+
+    </div>
+</div>

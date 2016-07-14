@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Associe-se</div>
+    </div>
+    <div data-ng-hide="waitingConfirmation" class="row homeBlock">
+        <div class=" col-sm-4 no-buffer-left">
+            <label class=" text-muted">Nome Completo</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.nome" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Endereço</label>
+            <input type="text" class="form-control" placeholder="" ng-model="signUpInfo.endereco" data-ng-change="validateForm()">
+
+
+            <label class="top-buffer text-muted">Número</label>
+            <input type="text" class="form-control" placeholder="" ng-model="signUpInfo.end_numero" data-ng-change="validateForm()">
+
+
+            <label class="top-buffer text-muted">Complemento</label>
+            <input type="text" class="form-control" placeholder="" ng-model="signUpInfo.end_complemento" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Bairro</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.bairro" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Cidade</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.cidade" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Estado</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.estado" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">CEP</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.cep" data-ng-change="validateForm()" placeholder="ex. 04127000 ">
+
+            <span data-ng-show="loading" class="pull-right hidden-xs" style="margin-top: 45px;">carregando <i class="fa fa-spinner fa-spin text-success fa-2x"></i></span>
+
+            <!-- <span class="pull-right hidden-xs" style="margin-top: 36px;">*Campos obrigatórios</span> -->
+        </div>
+        
+        <div class="col-sm-4 no-buffer-left">
+
+            <label class=" text-muted">Telefone</label>
+            <div class="input-group" style="width:100%">
+                <div class="col-sm-3 col-xs-2 no-buffer-left">
+                    <input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="DDD ex. '11'" ng-model="signUpInfo.tel_ddd" data-ng-change="validateForm()"placeholder="DDD" style="border-radius: 12px;">
+                </div>
+                <!-- <span class="input-group-addon"></span> -->
+                 <div class="col-sm-9 col-xs-10 no-buffer-left no-buffer-right">
+                    <input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="ex. 32198765" ng-model="signUpInfo.telefone" data-ng-change="validateForm()" style="border-radius: 12px;">
+                </div>
+            </div>
+
+            <label class="top-buffer text-muted">Celular</label>
+            <div class="input-group" style="width:100%">
+                <div class="col-sm-3 col-xs-2 no-buffer-left">
+                    <input type="text" class="form-control"data-toggle="tooltip" data-placement="bottom" title="DDD ex. '11'"  ng-model="signUpInfo.cel_ddd" data-ng-change="validateForm()" placeholder="DDD" style="border-radius: 12px;" ng-maxlength="2">
+                </div>
+                <div class="col-sm-9 col-xs-10 no-buffer-left no-buffer-right">
+                    <input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="ex. 987651234" ng-model="signUpInfo.celular" data-ng-change="validateForm()" style="border-radius: 12px;">
+                </div>
+            </div>
+            <label class="top-buffer text-muted">CRMV</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.crmv" data-ng-change="validateForm()" placeholder="Com o estado ex. 0000SP">
+
+            <label class="top-buffer text-muted ">Email</label>
+            <input type="text" class="form-control required" ng-model="signUpInfo.email"  data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Especialidade</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.especialidade" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">CPF</label>
+            <input type="text" class="form-control" ng-model="signUpInfo.cpf" data-ng-change="validateCPF(signUpInfo.cpf)" data-ng-change="validateForm()" placeholder="ex. 12345678900">
+
+            <label class="top-buffer text-muted">Senha</label>
+            <input type="password" class="form-control" ng-model="signUpInfo.senha"data-ng-change="validateForm()" >
+
+            <label class="top-buffer text-muted">Confimação de senha</label>
+            <input type="password" class="form-control" ng-model="signUpInfo.senhaConf" data-ng-change="validateForm()">
+
+            <button type="button" class="btn btn-success bg-verde top-buffer" ng-click="signup()" align="center" style="width:100%; margin-top:40px" ng-disabled="error">Inscreva-se</button>
+            <!-- <span class="pull-right hidden-md hidden-lg hidden-sm" style="margin-top: 40px;">*Campos obrigatórios</span> -->
+
+            
+        </div>
+        
+        
+        <div ng-include="'templates/sidebar.html'"></div>
+    </div>
+
+    <div data-ng-hide="waitingConfirmation" class="row">
+            <div class="col-sm-8 ">
+                <div class="text-danger pull-right">
+                    <ul style="list-style-type: none; text-align:right;">
+                        <li data-ng-show="error">{{errorMessage.emailRegistrado}}</li>
+                        <li data-ng-show="error">{{errorMessage.loginIncorreto}}</li>
+                        <li data-ng-show="error">{{errorMessage.cpfInvalido}}</li>
+                        <li data-ng-show="error">{{errorMessage.senhaDiferente}}</li>
+                        <li data-ng-show="error">{{errorMessage.incompleto}}</li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+
+    <div data-ng-show="waitingConfirmation" class="row homeBlock">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>Sua inscrição foi enviada.</h2>
+                <p>Você recebera um email de confimação em instantes. Por favor acesse o link indicado para concluir sua inscrição.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>

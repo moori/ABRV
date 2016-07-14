@@ -1,0 +1,79 @@
+<div class="navbar-inverse abrvFooter bg-verdeEscuro">
+    <div id="fb-root"></div>
+
+
+
+
+    <div class="container">
+        <div class="row" style="padding-bottom: 15px;">
+            <div class="col-sm-3">
+                <h3>Contato</h3>
+                <p><b>Localização:</b> Rua Padre Machado, 455 cj 32 - 04127-000 - São Paulo</p>
+                <!-- <p><b>Telefone:</b> (11) XXXX-XXXX</p> -->
+                <p><b>E-Mail:</b> abrv@abrv.org.br</p>
+            </div>
+
+            <div class="col-sm-3"><h3>Redes Sociais</h3>
+                <div class="fb-page" data-href="https://www.facebook.com/imaginologia/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/imaginologia/">
+                            <a href="https://www.facebook.com/imaginologia/">ABRV</a>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 hidden-xs">
+                <h3>Colégio Brasileiro de Radiologia Veterinária</h3>
+                <p>O colégio tem por finalidade primordial: Incentivar médicos veterinários a aprimorarem seus conhecimentos nos campos do Diagnóstico por Imagem e das terapias por radiações, sendo criada a projeção dos veterinários, clientes e pacientes.</p>
+            </div>
+
+
+<!-- TAgs -->
+<!--             <div class="col-sm-3 hidden-xs"><h3>Tags</h3>
+                <a href="" class="badge tag-bubble">Endocrinologia</a>
+                <a href="" class="badge tag-bubble">Radiologia</a>
+                <a href="" class="badge tag-bubble">ABRV</a>
+                <a href="" class="badge tag-bubble">Artigos</a>
+                <a href="" class="badge tag-bubble">Ultra-Sonografia</a>
+                
+                <a href="" class="badge tag-bubble">Endocrinologia</a>
+                <a href="" class="badge tag-bubble">Radiologia</a>
+                <a href="" class="badge tag-bubble">ABRV</a>
+                <a href="" class="badge tag-bubble">Artigos</a>
+                <a href="" class="badge tag-bubble">Ultra-Sonografia</a>
+                
+                <a href="" class="badge tag-bubble">Endocrinologia</a>
+            </div> -->
+
+       <!--      <div class="col-sm-3">
+                <h3>Para receber nossos informativos diariamente, cadastre seu e-mail</h3>
+                <div class="input-group">
+                    <div class="col-sm-9 no-padding-left no-padding-right">
+                        <input type="text" class="form-control input-sm">
+                    </div>
+                    <div class="col-sm-3 ">
+                        <button class="btn btn-success btn-verde btn-sm">Enviar</button>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-sm-3" data-ng-controller="footerCtrl">
+                <form name="newsletterForm">
+                <h3>Para receber nossos informativos, cadastre seu e-mail</h3>
+
+                    <input type="email" ng-required="true" name="newsEmail" class="form-control input-sm bottom-buffer" data-ng-model="newsletterEmail" placeholder="insira seu email">
+                    <button data-ng-disabled="newsletterForm.newsEmail.$error.email || newsletterForm.newsEmail.$error.required" class="btn btn-success btn-verde btn-sm pull-right" data-ng-click="sendEmail()">Enviar</button>
+                    <b data-ng-show="emailSent" class="font-verde">Por favor, verifique seu e-mail.</b>
+                    <b data-ng-show="errorMSG" class="font-verde">Ouvi um problema em nosso sistema, por favor tente mais tarde.</b>
+                    <span data-ng-show="loading"><i class="fa fa-spinner fa-spin text-success fa-2x"></i></span>
+                </form>
+            </div>
+
+        
+        </div>
+    </div>
+</div>
+<div class="navbar-inverse credits">
+    <p class="container" style="margin-bottom:-10px">Site desenvolvido por <a href="http://www.movibr.com/" target="_blank">Movi Brasil</a></p>
+</div>

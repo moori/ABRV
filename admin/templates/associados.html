@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <span class="h2">Associados  <i ng-show="loading" class="fa fa-spinner fa-spin"></i>  </span>
+      <span class="pull-right lead">
+        <span class="glyphicon glyphicon-search"></span>
+        <input ng-model="query" type="text"/>
+      </span>
+    </div>
+    <div class="panel-body">
+      <p>Consulta de associados e a situação de pagamento da anuidade.</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><a href="" ng-click="sortField = 'ID'; reverse = !reverse">ID</a></th>
+          <th><a href="" ng-click="sortField = 'Nome'; reverse = !reverse">Nome</th>
+          <th><a href="" ng-click="sortField = 'Email'; reverse = !reverse">Email</th>
+          <th><a href="" ng-click="sortField = 'CRMV'; reverse = !reverse">CRMV</th>
+          <th><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="u in usuarios | filter:query | orderBy:sortField:reverse">
+          <td>{{ u.ID }}</td>
+          <td><a href="#/associado/{{u.ID}}">{{ u.Nome }}</a></td>
+          <td>{{ u.Email }}</td>
+          <td>{{ u.CRMV }}</td>
+          <!-- <td>{{ u.Status | pagSeguroStatus }} ({{ u.Status | pagSeguroStatus}})</td> -->
+          <td>{{ u.Status | anuidadeStatus}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+</div>

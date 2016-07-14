@@ -1,0 +1,6 @@
+{
+  "anoVigente": 2016,
+  "anoVigenteID": 1,
+  "admins": ["daniel.moori@gmail.com", "admin@email.com"],
+  "redirectRouteafterLogin": "renovarAnuidade"
+}

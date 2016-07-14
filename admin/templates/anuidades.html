@@ -1,0 +1,58 @@
+<div class="container">
+
+
+
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+          <span class="h2">Anuidades  <i ng-show="loading" class="fa fa-spinner fa-spin"></i> </span>
+
+          <span class="pull-right lead">
+            <button data-ng-click="refresh()">Atualizar 
+              <span ng-hide="refreshing && !loading" >
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+              </span>
+              <span ng-show="refreshing && !loading" >
+              <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+              </span>
+            </button>
+            <span class="glyphicon glyphicon-search"></span>
+            <input ng-model="query" type="text"/>
+          </span>
+        </div>
+        <div class="panel-body">
+          <p>Consulta de status de pagamento das anuidades.</p>
+        </div>
+        
+        <!-- Table -->
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="hidden-xs"><a href="" ng-click="sortField = 'ID'; reverse = !reverse">UserID</th>
+              <th><a href="" ng-click="sortField = 'Nome'; reverse = !reverse">Usuário</th>
+              <th class="hidden-xs"><a href="" ng-click="sortField = 'Email'; reverse = !reverse">Email</th>
+              <th class="hidden-xs"><a href="" ng-click="sortField = 'transactionCode'; reverse = !reverse">Código da transação</th>
+              <th><a href="" ng-click="sortField = 'SaleID'; reverse = !reverse">Ano (ID)</th>
+              <th><a href="" ng-click="sortField = 'userStatus'; reverse = !reverse">Anuidade</th>
+              <th class="hidden-xs"><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Pagamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="a in anuidades | filter:query | orderBy:sortField:reverse">
+              <td class="hidden-xs">{{ a.ID }}</td>
+              <td>{{ a.Nome }}</td>
+              <td class="hidden-xs">{{ a.Email }}</td>
+              <td class="hidden-xs">{{ a.transactionCode }}</td>
+              <td>{{ a.Description }} ({{ a.SaleID }})</td>
+              <td ng-show="a.userStatus == 1 " class="text-success">{{ a.userStatus | anuidadeStatus }}</td>
+              <td ng-show="a.userStatus != 1 " class="text-danger">{{ a.userStatus | anuidadeStatus }}</td>
+              <td class="hidden-xs">{{ a.Status | pagSeguroStatus }}</td>
+              <!-- <td><button class="btn">notificar</button></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+</div>

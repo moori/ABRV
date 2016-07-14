@@ -1,0 +1,76 @@
+<div class="container">
+<!--     <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Alterar Senha</div>
+    </div> -->
+    <div class="row homeBlock">
+
+		<div ng-include="'templates/dashboard/dashboardNav.html'"></div>
+        <div data-ng-hide="updated">
+            <form name="passForm" data-ng-model="mForm" data-ng-submit="changePass()">
+                <div data-ng-hide="waitingConfirmation" class="row homeBlock">
+                    <div class=" col-sm-6 col-md-4 no-buffer-left">
+                        <label class="top-buffer text-muted">Senha Atual</label>
+                        <input
+                        name="senha"
+                        type="password"
+                        class="form-control"
+                        ng-model="senhaInfo.senha"
+                        data-ng-change="validatePass()"
+                        ng-required="true">
+                        <label class="top-buffer text-muted">Nova Senha</label>
+                        <input
+                        name="novaSenha"
+                        type="password"
+                        class="form-control"
+                        data-ng-class="{inputDanger:passForm.novaSenha.$dirty && (passForm.novaSenha.$error.required || errorMessage.senhaDiferente) }"
+                        ng-model="senhaInfo.novaSenha"
+                        data-ng-change="validatePass()"
+                        ng-required="true">
+
+                        <label class="top-buffer text-muted">Confirme Nova Senha</label>
+                        <input
+                        name="novaSenhaConf"
+                        type="password" 
+                        class="form-control"
+                        data-ng-class="{inputDanger:passForm.novaSenhaConf.$dirty && (passForm.novaSenhaConf.$error.required || errorMessage.senhaDiferente)}"
+                        ng-model="senhaInfo.novaSenhaConf"
+                        data-ng-change="validatePass()"
+                        ng-required="true">
+
+                        <button
+                        name="btnSubmit"
+                        type="submit"
+                        class="btn btn-success bg-verde top-buffer"
+                        align="center"
+                        style="width:100%; margin-top:40px"
+                        ng-disabled="passForm.$invalid">Cadastrar nova senha</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+        <div class="col-sm-6 ">
+            <div class="text-danger pull-right">
+                <ul style="list-style-type: none; text-align:right;">
+                    <li data-ng-show="error">{{errorMessage.senhaDiferente}}</li>
+                    <li data-ng-show="error">{{errorMessage.senhaIncorreta}}</li>
+                    <li class="error-message" data-ng-show="passForm.senha.$dirty && passForm.senha.$error.required">Insira a senha atual</li>
+
+
+                    <li class="error-message" data-ng-show="passForm.novaSenha.$dirty && passForm.novaSenha.$error.required">Insira um nova senha</li>
+                    <li class="error-message" data-ng-show="passForm.novaSenhaConf.$dirty && passForm.novaSenhaConf.$error.required">Insira a confirmação de nova senha</li>
+
+
+                </ul>
+            </div>
+            <div class="text-danger pull-right">
+                <h3 data-ng-show="updated" class="font-verde">Senha atualizada com sucesso <i class="fa fa-check"></i></h3>
+                <span data-ng-show="loading" class="text-muted"> Carregando <i class="fa fa-spinner fa-spin text-success fa-2x"></i></span>
+                        <br>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+</div>

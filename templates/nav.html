@@ -1,0 +1,84 @@
+<!--
+<nav class="navbar navbar-default navbar-fixed-top">
+<ul class="container">
+    <li class="active"><a ui-sref="home">home</a></li>
+    <li class="active"><a ui-sref="associese">Associe-se</a></li>
+    <li class="active"><a ui-sref="colegio">Colégio</a></li>
+    <li class="active"><a ui-sref="materias">Matérias</a></li>
+</ul>
+</nav>
+-->
+
+<nav class="container navbar navbar-default navbar-abrv" data-ng-controller="navCtrl">
+    
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button id="mobileMenuBtn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+      </button>
+      <a class="visible-xs navbar-brand" href="#">Menu</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse rounded-bottom" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li ui-sref-active="active" class="dropdown rounded_left myFakeClass">
+          <a href="" class="dropdown-toggle rounded_left" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SOBRE <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ui-sref="objetivos">OBJETIVOS</a></li>
+            <li><a href="#" ui-sref="estatuto">ESTATUTO</a></li>
+            <li><a href="#" ui-sref="fundador">FUNDADOR</a></li>
+            <li><a href="#" ui-sref="diretoria">DIRETORIA</a></li>
+            <li><a href="#" ui-sref="historiaDoRX">HISTÓRIA DO RX</a></li>
+          </ul>
+        </li>
+
+
+        <li data-ng-show="!logged" ui-sref-active="active"><a ui-sref="associese">ASSOCIE-SE</a></li>
+     
+        <li data-ng-show="logged" ui-sref-active="active">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAINEL <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ui-sref="dashboard">Minha Conta</a></li>
+            <li><a href="#" ui-sref="atualizarDados">Atualizar Dados</a></li>
+            <li><a href="#" ui-sref="renovarAnuidade">Renovar Anuidade</a></li>
+            <li><a href="#" ui-sref="alterarSenha">Alterar Senha</a></li>
+            <li><a href="#" ui-sref="inscricoes">Inscrições</a></li>  
+            <!-- <li><a href="#" ui-sref="cancelar">Cancelar</a></li> -->
+          </ul>
+        </li>
+
+        <li ui-sref-active="active" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COLÉGIO <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" ui-sref="comunicado">COMUNICADO IMPORTANTE</a></li>
+            <li><a href="#" ui-sref="objetivosDoColegio">OBJETIVOS DO COLÉGIO</a></li>
+            <li><a href="#" ui-sref="diretoriaColegio">DIRETORIA</a></li>
+            <li><a href="#" ui-sref="membros">MEMBROS</a></li>
+            <li><a href="#" ui-sref="termosDeDisplasia">TERMOS DE DISPLASIA</a></li>
+            <li><a href="#" ui-sref="normasDoColegio">NORMAS DO COLÉGIO</a></li>
+          </ul>
+        </li>
+        <!-- <li ui-sref-active="active"><a ui-sref="materias">ARTIGOS</a></li> -->
+        <li ui-sref-active="active"><a ui-sref="noticias">NOTÍCIAS</a></li>
+        <li ui-sref-active="active"><a ui-sref="eventos">EVENTOS E CURSOS</a></li>
+        <li ui-sref-active="active"><a ui-sref="sindiv">SINDIV</a></li>
+        <!-- <li ui-sref-active="active"><a ui-sref="sobre">SOBRE</a></li> -->
+        
+
+
+
+        <li ui-sref-active="active" class="rounded_right"><a ui-sref="faleConosco" class="rounded_right">FALE CONOSCO</a></li>
+
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,181 @@
+<div class="container">
+<!--     <div class="row">
+        <div class="col-sm-12 barraTitulo bg-verdeEscuro bottom-buffer">Atualizar Dados</div>
+    </div> -->
+
+        
+
+
+    <div class="row homeBlock bottom-buffer">
+        <div ng-include="'templates/dashboard/dashboardNav.html'"></div>
+
+
+        <div class=" col-sm-4">
+            <label class=" text-muted">Nome Completo</label>
+            <input type="text" class="form-control" ng-model="user.nome" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Endereço</label>
+            <input type="text" class="form-control" placeholder="" ng-model="user.endereco" data-ng-change="validateForm()">
+
+
+            <label class="top-buffer text-muted">Número</label>
+            <input type="text" class="form-control" placeholder="" ng-model="user.end_numero" data-ng-change="validateForm()">
+
+
+            <label class="top-buffer text-muted">Complemento</label>
+            <input type="text" class="form-control" placeholder="" ng-model="user.end_complemento" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Bairro</label>
+            <input type="text" class="form-control" ng-model="user.bairro" data-ng-change="validateForm()">
+
+            <label class="top-buffer text-muted">Cidade</label>
+            <input type="text" class="form-control" ng-model="user.cidade" data-ng-change="validateForm()">
+
+            <!-- <label class="top-buffer text-muted">Estado</label>
+            <input type="text" class="form-control" ng-model="user.estado" data-ng-change="validateForm()"> -->
+
+            <label class="top-buffer text-muted">Estado</label>
+
+            <ol
+            name="estado"
+            class="form-control nya-bs-select"
+            ng-model="user.estado">
+                <!-- <li nya-bs-option="estado in estados">
+                    <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                </li> -->
+
+                <div ng-repeat-start="estado in estados"></div>
+                    <li class="nya-bs-option" data-value="{{estado.valor}}">
+                        <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                    </li>
+
+                <div ng-repeat-end=""></div>
+            </ol>
+
+            <!-- <span class="pull-right hidden-xs" style="margin-top: 36px;">*Campos obrigatórios</span> -->
+        </div>
+        
+        <div class="col-sm-4 ">
+
+            <label class=" text-muted">Email</label>
+            <input type="text" class="form-control bottom-buffer" ng-model="user.email" data-ng-change="validateForm()">
+
+            <label class=" text-muted">Telefone</label>
+            <div class="input-group" style="width:100%">
+                <div class="col-sm-3 col-xs-2 no-padding-left">
+                    <input type="text" class="form-control " data-toggle="tooltip" data-placement="bottom" title="DDD ex. '11'" ng-model="user.tel_ddd" data-ng-change="validateForm()"placeholder="DDD" style="border-radius: 12px;">
+                </div>
+                <!-- <span class="input-group-addon"></span> -->
+                 <div class="col-sm-9 col-xs-10 no-padding-left no-padding-right">
+                    <input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="ex. 32198765" ng-model="user.telefone" data-ng-change="validateForm()" style="border-radius: 12px;">
+                </div>
+            </div>
+
+            <label class="top-buffer text-muted">Celular</label>
+            <div class="input-group" style="width:100%">
+                <div class="col-sm-3 col-xs-2 no-padding-left">
+                    <input type="text" class="form-control"data-toggle="tooltip" data-placement="bottom" title="DDD ex. '11'"  ng-model="user.cel_ddd" data-ng-change="validateForm()" placeholder="DDD" style="border-radius: 12px;">
+                </div>
+                <div class="col-sm-9 col-xs-10 no-padding-left no-padding-right">
+                    <input type="text" class="form-control" data-toggle="tooltip" data-placement="bottom" title="ex. 987651234" ng-model="user.celular" data-ng-change="validateForm()" style="border-radius: 12px;">
+                </div>
+            </div>
+            <!-- <label class="top-buffer text-muted">CRMV</label>
+            <input type="text" class="form-control" ng-model="user.crmv" data-ng-change="validateForm()"> -->
+
+            <label class="top-buffer text-muted">CRMV</label>
+            <div class="input-group" style="width:100%">
+                <div class="col-sm-7 col-xs-10 no-padding-left no-padding-right">
+                    <input
+                    name="crmv"
+                    type="text"
+                    class="form-control"
+                    ng-model="user.crmv"
+                    ng-required="true"
+                    placeholder="ex. 1234"
+                    style="border-radius: 12px;">
+                </div>
+                <div class="col-sm-5 col-xs-2 no-padding-right">
+
+                    <ol
+                    name="CRMVestado"
+                    class="form-control nya-bs-select"
+                    data-ng-class="{inputDanger:userForm.CRMVestado.$error.required}"
+                    ng-model="user.crmvEstado">
+                        <!-- <li nya-bs-option="estado in estados">
+                            <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li> -->
+                        <div ng-repeat-start="estado in estados"></div>
+                        <li class="nya-bs-option" data-value="{{estado.valor}}">
+                            <a>{{estado.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+
+                        <div ng-repeat-end=""></div>
+                    </ol>
+
+                </div>
+            </div>
+
+           <!--  <label class="top-buffer text-muted ">Email</label>
+            <input type="text" class="form-control required" ng-model="user.email"  data-ng-change="validateForm()"> -->
+
+           <!--  <label class="top-buffer text-muted">Especialidade</label>
+            <input type="text" class="form-control" ng-model="user.especialidade" data-ng-change="validateForm()"> -->
+
+
+            <label class="top-buffer text-muted">Especialidade</label>
+                    <!-- <ol
+                    class="form-control nya-bs-select"
+                    ng-model="signUpInfo.especialidade" multiple>
+                        <li nya-bs-option="especialidade in especialidades">
+                            <a>{{especialidade.label}}<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                    </ol> -->
+                    <ol
+                    class="form-control nya-bs-select"
+                    ng-model="user.especialidades" multiple>
+                        <li class="nya-bs-option" data-value="radiologia">
+                            <a>Radiologia<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="ultrassom">
+                            <a>Ultrassonografia<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="tomografia">
+                            <a>Tomografia Computadorizada<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                        <li class="nya-bs-option" data-value="ressonancia">
+                            <a>Imagem por Ressonância Magnética<span class="glyphicon glyphicon-ok check-mark"></span></a>
+                        </li>
+                    </ol>
+
+            <label class="top-buffer text-muted">CPF</label>
+            <input type="text" class="form-control" ng-model="user.cpf" data-ng-change="validateForm()" placeholder="ex. 12345678900">
+
+            <label class="top-buffer text-muted">CEP</label>
+            <input type="text" class="form-control" ng-model="user.cep" data-ng-change="validateForm()" placeholder="ex. 04127000 ">
+
+            <button type="button" class="btn btn-success bg-verde top-buffer" ng-click="updateUserData()" align="center" style="width:100%; margin-top:40px" ng-disabled="error">Atualizar Dados</button>
+            <!-- <span class="pull-right hidden-md hidden-lg hidden-sm" style="margin-top: 40px;">*Campos obrigatórios</span> -->
+
+            
+        </div>
+        
+        
+        <div ng-include="'templates/sidebar.html'"></div>
+    </div>
+
+    <div class="row">
+            <div class="col-sm-8 ">
+                <div class="text-danger pull-right">
+                    <ul style="list-style-type: none; text-align:right;">
+                        <li data-ng-show="error">{{errorMessage.emailRegistrado}}</li>
+                        <li data-ng-show="error">{{errorMessage.loginIncorreto}}</li>
+                        <li data-ng-show="error">{{errorMessage.cpfInvalido}}</li>
+                        <li data-ng-show="error">{{errorMessage.senhaDiferente}}</li>
+                        <li data-ng-show="error">{{errorMessage.incompleto}}</li>
+                        <li data-ng-show="loading" class="text-success">{{statusMessage}} <i class="fa fa-check"></i></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</div>

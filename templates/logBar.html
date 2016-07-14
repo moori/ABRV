@@ -1,0 +1,31 @@
+<header class="navbar-inverse bg-verdeEscuro form-inline loginBar">
+<div class="container  navbar" ng-controller="loginCtrl">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="hidden-xs">
+                <div class="input-group-sm pull-right btn-group-sm hidden-xs"  data-ng-init="init()">
+                    <form role="form" name="myForm" novalidate>
+                        <div data-ng-show="!logged" >
+                            <!-- <span data-ng-show="error" class="error-message small">{{errorMessage}}</span> -->
+                            <span class="font-verdeClaro"> Login para associados: </span>
+                            <span>Email</span> <input type="text" class="form-control input-sm" ng-required="!logged" id="email" ng-model="email">
+                            <span>Senha</span> <input type="password" class="form-control input-sm" ng-required="!logged" id="senha" ng-model="pass">
+                            <button class="btn bg-verde btn-sm" ng-click="loginUser()" ng-disabled="myForm.$invalid">Entrar</button>
+                            <p data-ng-show="error" class="esqueciSenha small"><a ui-sref="resetPassword">Esqueci a senha</a></p>
+                        </div>
+                        <div data-ng-show="logged">
+                            <span>Olá, <a ui-sref="dashboard">{{user.Nome}}</a></span>
+
+                            <button class="btn bg-verde btn-sm" ng-click="logoutUser()" >Sair</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="visible-xs-inline pull-right">
+                <button data-ng-hide="logged" ui-sref="login" class="btn bg-verde btn-sm">Entrar</button>
+                <button data-ng-show="logged" ui-sref="home" ng-click="logoutUser()" class="btn bg-verde btn-sm">Sair</button>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
