@@ -25,8 +25,8 @@ if($action == "ExportSubscriptions"){
 	fputcsv($output, array('ID', 'Nome', 'Email', 'Modalidade', 'Obs', 'Codigo de inscricao', 'Valor do Pagamento', 'Status Pagamento', 'Inscricao'));
 
 	// fetch the data
-	mysql_connect('localhost', DBUSER, DBPASS);
-	mysql_select_db('abrv_db');
+	mysql_connect(ENV_DB_HOST, ENV_DB_USER, ENV_DB_PASS);
+	mysql_select_db(ENV_DB_SCHEMA);
 	$q = "SELECT `users`.`ID`, `users`.`Nome`, `users`.`Email`, `users`.`Tipo`, `event_user_rel`.`Observation`, `event_user_rel`.`SubscriptionCode`, `event_user_rel`.`PagamentoValor`, `event_user_rel`.`Status`, `event_user_rel`.`SubscriptionStatus`
 	FROM `users`
 	INNER JOIN `event_user_rel`
