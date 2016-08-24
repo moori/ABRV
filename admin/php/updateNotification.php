@@ -1,13 +1,13 @@
 <?php
 header("access-control-allow-origin: https://pagseguro.uol.com.br");
-include("../PagSeguroLibrary/PagSeguroLibrary.php");
+include("../../PagSeguroLibrary/PagSeguroLibrary.php");
 include("conn.php");
 include("../../php/mailAPI.php");
 
 // $code = 'F5966AFBADB7ADB7441334D4CFAD787B4E25';
 //$code = $_POST['notificationCode'];
 date_default_timezone_set("America/Sao_Paulo");
-$d=strtotime("-15 days");   
+$d=strtotime("-29 days");   
 $initialDate = date("Y-m-d", $d) . "T" .date("H:i", $d);
 $primordial=date_create("2016-03-14");
 // if($initialDate < $primordial){

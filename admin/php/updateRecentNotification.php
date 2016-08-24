@@ -1,6 +1,6 @@
 <?php
 header("access-control-allow-origin: https://pagseguro.uol.com.br");
-include("../PagSeguroLibrary/PagSeguroLibrary.php");
+include("../../PagSeguroLibrary/PagSeguroLibrary.php");
 include("conn.php");
 include("../../php/mailAPI.php");
 
