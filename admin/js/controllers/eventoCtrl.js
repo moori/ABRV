@@ -24,7 +24,7 @@ angular
             var data = {action: "LoadUserSubscriptions", eventID: $scope.eventID};
 
             $http.post("php/evento.php", data).success(function (response) {
-                // console.log(response);
+                console.log(response);
                 $scope.subs = response;
                 angular.forEach($scope.subs, function (sub) {
                     sub.id = parseFloat(sub.id);
@@ -66,6 +66,25 @@ angular
             window.open("php/csvDownload.php?action=" + data.action + "&eventID=" + data.eventID);
         };
 
+        $scope.generateCerts = function(){
+            
+            $scope.loading = true;
+
+            var data = {
+                action: "GenerateCertificate",
+                subs: $scope.subs,
+                event_ID: $scope.eventID,
+                template: "cert_tpl_01.php",
+                nome: "nome",
+                curso: "curso"
+            };
+            console.log(data);
+            $http.post("php/certificados.php", data).success(function (response) {
+                $scope.loading = false;
+                location.reload();
+            });
+        };
+
         $scope.confirmSubs = function(userID){
             var r = confirm("Tem certeza que deseja inscrever este usuário?");
             if (r === true) {
@@ -77,7 +96,7 @@ angular
                     $scope.loading = false;
                 });
                 $scope.loadSubscriptions();
-                location.reload();
+                // location.reload();
             }
         };
 
@@ -104,6 +123,26 @@ angular
             });
             $scope.loadSubscriptions();
             location.reload();
+        };
+
+        $scope.showCodeXML = function(ps_code){
+            var data = {action: "ShowCodeXML", code: ps_code};
+            $http.post("php/showCodeXML.php", data);
+        };
+
+        $scope.previewCert = function(certPath){
+            window.open("../" + certPath);
+        };
+
+        $scope.toogleAvailability = function(userID, valor){
+            valor = valor ? 1 : 0;
+            var data = {action: "ToogleAvailability", userID: userID, eventID: $scope.eventID, valor: valor};
+            console.log(data);
+            $scope.loading = true;
+            $http.post("php/certificados.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log(response);
+            });
         };
     
 }]);

@@ -24,4 +24,8 @@ angular
 		});
 	};
 
+    $scope.downloadCert = function(path){
+        window.open(path);
+	};
+
 }]);

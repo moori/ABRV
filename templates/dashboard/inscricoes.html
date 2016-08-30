@@ -17,8 +17,12 @@
                     </div>
                     <div data-ng-show="subs.SubscriptionStatus == 0">
                         <p>Inscrição em avaliação</p>
-                	</div>
-                	<hr>
+                    </div>
+
+                    <div data-ng-show="subs.public == 1 && subs.SubscriptionStatus == 1">
+                        <button data-ng-click="downloadCert(subs.path)">Baixar o certificado</button>
+                    </div>
+                	<hr size="30">
         	</div>
 
         	<div data-ng-show="subscriptions.length == 0">

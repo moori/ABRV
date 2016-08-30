@@ -47,11 +47,38 @@ if($action == "LoadSales"){
 
 if($action == "LoadUserSubscriptions"){
 	$eventID = $data->eventID;
-	$q = "SELECT `event_user_rel`.`id`, `users`.`ID`, `users`.`Nome`, `users`.`Email`, `users`.`Tipo`, `event_user_rel`.`Observation`, `event_user_rel`.`SubscriptionCode`, `event_user_rel`.`PagamentoValor`, `event_user_rel`.`Status`, `event_user_rel`.`SubscriptionStatus`
+	// $q = "SELECT `event_user_rel`.`id`, `users`.`ID`, `users`.`Nome`, `users`.`Email`, `users`.`Tipo`, `event_user_rel`.`Observation`, `event_user_rel`.`SubscriptionCode`, `event_user_rel`.`PagamentoValor`, `event_user_rel`.`Status`, `event_user_rel`.`SubscriptionStatus`
+	// FROM `users`
+	// INNER JOIN `event_user_rel`
+	// ON `users`.`ID` = `event_user_rel`.`ID_user`
+	// WHERE `event_user_rel`.`ID_event` = '$eventID'";
+	$q = "SELECT * FROM
+	(SELECT 
+	`event_user_rel`.`id`, 
+	`users`.`ID` userID, 
+	`users`.`Nome`, 
+	`users`.`Email`, 
+	`users`.`Tipo`, 
+	`event_user_rel`.`Observation`, 
+	`event_user_rel`.`SubscriptionCode`, 
+	`event_user_rel`.`PagamentoValor`, 
+	`event_user_rel`.`Status`, 
+	`event_user_rel`.`ID_event`, 
+	`event_user_rel`.`SubscriptionStatus`
 	FROM `users`
 	INNER JOIN `event_user_rel`
-	ON `users`.`ID` = `event_user_rel`.`ID_user`
-	WHERE `event_user_rel`.`ID_event` = '$eventID'";
+	ON `users`.`ID` = `event_user_rel`.`ID_user`) as subs
+	LEFT JOIN
+	(SELECT 
+	user_id, 
+	event_id, path, 
+	`public` 
+	FROM cert_user_rel ) as certs
+	ON subs.userID = certs.user_ID AND subs.ID_event = certs.event_id
+	WHERE subs.ID_event = '".$eventID."' ";
+
+
+
 	$query = $conn->prepare($q);
 	$query->execute();
 	$result = $query->fetchAll(PDO::FETCH_OBJ);

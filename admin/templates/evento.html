@@ -22,8 +22,26 @@
           <span ng-show="downloading && !loading" >
           <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
           </span>
-
         </button>
+
+        <button data-ng-click="generateCerts()">Gerar Certificados
+          <span ng-hide="downloading && !loading" >
+          <i class="fa fa-download" aria-hidden="true"></i>
+          </span>
+          <span ng-show="downloading && !loading" >
+          <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+          </span>
+        </button>
+
+        <!-- <button data-ng-click="downloadCerts()">Baixar Certificados
+          <span ng-hide="downloading && !loading" >
+          <i class="fa fa-download" aria-hidden="true"></i>
+          </span>
+          <span ng-show="downloading && !loading" >
+          <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+          </span>
+        </button> -->
+
       </span>
 
 
@@ -78,27 +96,42 @@
           <th><a href="" ng-click="sortField = 'PagamentoValor'; reverse = !reverse">Valor do pagamento</th>
           <th><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Status</th>
           <th><a href="" >Ação</th>
+          <th><a href="" >Certificado</th>
         </tr>
       </thead>
       <tbody>
         <tr data-ng-repeat="sub in subs | filter:query | orderBy:sortField:reverse">
           <input type="hidden" data-ng-value="sub.id">
-          <td>{{ sub.ID }}</td>
-          <td><a href="#/associado/{{sub.ID}}">{{ sub.Nome }}</a></td>
+          <td>{{ sub.id }}</td>
+          <td><a href="#/associado/{{sub.userID}}">{{ sub.Nome }}</a></td>
           <td>{{ sub.Email }}</td>
           <td>{{ sub.Tipo | tipoMembro}}</td>
           <td>{{ sub.Observation }}</td>
           <td>{{ sub.SubscriptionCode | uppercase}}</td>
           <td>R${{ sub.PagamentoValor }}</td>
           <td>{{ sub.SubscriptionStatus | SubStatus }} ({{ sub.Status | pagSeguroStatus}})</td>
-          <td class="small">
-            <button class="btn-small" data-ng-click="confirmSubs(sub.ID)">Aprovar</button>
-            <button class="btn-small pull-right" data-ng-click="confirmCancel(sub.id)">Cancelar</button>
+          <td class="small form-inline">
+            <button class="btn-small" data-ng-click="confirmSubs(sub.userID)">Aprovar</button>
+            <button class="btn-small " data-ng-click="confirmCancel(sub.id)">Cancelar</button>
           </td>
+
+          <td class="small inline" data-ng-show="sub.path != null">
+            <div class="checkbox">
+              <label><input type="checkbox" ng-model="check" data-ng-click="toogleAvailability(sub.userID, check)" ng-checked="sub.public == 1">permitir download</label>
+            </div>
+            <button class="btn-small " data-ng-click="previewCert(sub.path)">Preview</button>
+          </td>
+
+          <td class="small inline" data-ng-show="sub.path == null">
+            <!-- <button class="btn-small " data-ng-click="generateSingleCert(sub.path)">Gerar</button> -->
+            nenhum certificado gerado
+          </td>
+          
         </tr>
       </tbody>
     </table>
   </div>
+
 
   
 </div>
