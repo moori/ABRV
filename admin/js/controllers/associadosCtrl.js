@@ -30,5 +30,11 @@ angular
             });
         };
         $scope.loadList();
+
+        $scope.exportCSV = function(){
+            var data = {action: "ExportUsers"};
+
+            window.open("php/csvDownload.php?action=" + data.action);
+        };
     
 }]);

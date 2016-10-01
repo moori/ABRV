@@ -8,18 +8,30 @@ $eventID = $data->eventID;
 
 if($action == "Inscritos"){
 
-	$q = "SELECT `users`.`ID`, `users`.`Nome`, `users`.`Email`, `users`.`Tipo`, `event_user_rel`.`Observation`, `event_user_rel`.`SubscriptionCode`, `event_user_rel`.`PagamentoValor`, `event_user_rel`.`Status`
-	FROM `users`
-	INNER JOIN `event_user_rel`
-	ON `users`.`ID` = `event_user_rel`.`ID_user`
-	WHERE `event_user_rel`.`ID_event` = '$eventID' ";
-	$query = $conn->prepare($q);
-	$query->execute();
-	$result = $query->fetchAll();
+  $q = "SELECT `users`.`ID`, `users`.`Nome`, `users`.`Email`, `users`.`Tipo`, `event_user_rel`.`Observation`, `event_user_rel`.`SubscriptionCode`, `event_user_rel`.`PagamentoValor`, `event_user_rel`.`Status`
+  FROM `users`
+  INNER JOIN `event_user_rel`
+  ON `users`.`ID` = `event_user_rel`.`ID_user`
+  WHERE `event_user_rel`.`ID_event` = '$eventID' ";
+  $query = $conn->prepare($q);
+  $query->execute();
+  $result = $query->fetchAll();
 
-	download_send_headers("inscritos_export_" . date("Y-m-d") . ".csv");
-	echo array2csv($result);
-	die();
+  download_send_headers("inscritos_export_" . date("Y-m-d") . ".csv");
+  echo array2csv($result);
+  die();
+
+}
+
+if($action == "Associados"){
+  $q = "SELECT users.ID, users.Nome, users.Email, users.CRMV, users.Status, users.Tipo, users.CPF FROM users";
+  $query = $conn->prepare($q);
+  $query->execute();
+  $result = $query->fetchAll();
+
+  download_send_headers("inscritos_export_" . date("Y-m-d") . ".csv");
+  echo array2csv($result);
+  die();
 
 }
 

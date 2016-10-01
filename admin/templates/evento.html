@@ -26,7 +26,16 @@
 
         <button data-ng-click="generateCerts()">Gerar Certificados
           <span ng-hide="downloading && !loading" >
-          <i class="fa fa-download" aria-hidden="true"></i>
+          <i class="fa fa-plus-square" aria-hidden="true"></i>
+          </span>
+          <span ng-show="downloading && !loading" >
+          <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+          </span>
+        </button>
+
+        <button data-ng-click="publishAll()">Publicar Todos
+          <span ng-hide="downloading && !loading" >
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
           </span>
           <span ng-show="downloading && !loading" >
           <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>

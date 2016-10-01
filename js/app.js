@@ -67,6 +67,10 @@ angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'truncate', 'ng
                 slug: null
             }
         }).
+        state('eventosPoliticaCancelamento', {
+            url: '/evento/politicaDeCancelamento',
+            templateUrl: 'templates/politicaDeCancelamento.html'
+        }).
 
         state('sindiv', {
             url: '/sindiv',

@@ -85,6 +85,19 @@ angular
             });
         };
 
+        $scope.publishAll = function(){
+            var data = {action: "PublishAll", eventID: $scope.eventID};
+            console.log(data);
+            $scope.loading = true;
+            $http.post("php/certificados.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log(response);
+                if(response == "SUCCESS"){
+                    location.reload();
+                }
+            });
+        };
+
         $scope.confirmSubs = function(userID){
             var r = confirm("Tem certeza que deseja inscrever este usuário?");
             if (r === true) {

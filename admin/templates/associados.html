@@ -12,6 +12,16 @@
     <div class="panel-body">
       <p>Consulta de associados e a situação de pagamento da anuidade.</p>
     </div>
+    <span class=" lead">
+      <button data-ng-click="exportCSV()">Exportar .CSV 
+        <span ng-hide="downloading && !loading" >
+        <i class="fa fa-download" aria-hidden="true"></i>
+        </span>
+        <span ng-show="downloading && !loading" >
+        <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+        </span>
+      </button>
+    </span>
 
     <!-- Table -->
     <table class="table table-striped">
@@ -20,6 +30,7 @@
           <th><a href="" ng-click="sortField = 'ID'; reverse = !reverse">ID</a></th>
           <th><a href="" ng-click="sortField = 'Nome'; reverse = !reverse">Nome</th>
           <th><a href="" ng-click="sortField = 'Email'; reverse = !reverse">Email</th>
+          <th><a href="" ng-click="sortField = 'Modalidade'; reverse = !reverse">Modalidade</th>
           <th><a href="" ng-click="sortField = 'CRMV'; reverse = !reverse">CRMV</th>
           <th><a href="" ng-click="sortField = 'Status'; reverse = !reverse">Status</th>
         </tr>
@@ -29,6 +40,7 @@
           <td>{{ u.ID }}</td>
           <td><a href="#/associado/{{u.ID}}">{{ u.Nome }}</a></td>
           <td>{{ u.Email }}</td>
+          <td>{{ u.Tipo | tipoMembro}}</td>
           <td>{{ u.CRMV }}</td>
           <!-- <td>{{ u.Status | pagSeguroStatus }} ({{ u.Status | pagSeguroStatus}})</td> -->
           <td>{{ u.Status | anuidadeStatus}}</td>
