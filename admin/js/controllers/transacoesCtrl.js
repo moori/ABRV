@@ -16,15 +16,29 @@ angular
         $scope.reverse = true;
 
         $scope.loadList = function(){
-            $scope.loading = true;
-            $http.get("php/transacoes.php").then(function (response) {
-                $scope.transacoes = response.data;
-                $scope.loading = false;
-                angular.forEach($scope.transacoes, function (transacao) {
-                    transacao.ID = parseFloat(transacao.ID);
-                });
-            });
+          var data = {action: "LoadTransactions"};
+          $scope.loading = true;
+          $http.post("php/transacoes.php", data).success(function (response) {
+              $scope.transacoes = response;
+              $scope.loading = false;
+              console.log(response);
+              angular.forEach($scope.transacoes, function (transacao) {
+                  transacao.ID = parseFloat(transacao.ID);
+              });
+          });
         };
         $scope.loadList();
-    
+
+        $scope.openTransactionPage = function(transCode){
+          console.log("Get URL");
+          console.log(transCode);
+            var data = {action: "GetTransactionURL", transCode: transCode};
+            $scope.loading = true;
+            $http.post("php/transacoes.php", data).success(function (resp) {
+                $scope.loading = false;
+                console.log(resp);
+                window.open(resp);
+            });
+        };
+
 }]);

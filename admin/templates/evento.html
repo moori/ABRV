@@ -12,10 +12,10 @@
     <div class="panel-body">
       <p>Consulta de inscritos e a situação de pagamento.</p>
       <p data-ng-show="evento.Active == 0" class="lead">Curso encerrado.</p>
-      
+
 
       <span class=" lead">
-        <button data-ng-click="exportCSV()">Exportar .CSV 
+        <button data-ng-click="exportCSV()">Exportar .CSV
           <span ng-hide="downloading && !loading" >
           <i class="fa fa-download" aria-hidden="true"></i>
           </span>
@@ -41,6 +41,15 @@
           <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
           </span>
         </button>
+
+        <!-- <button data-ng-click="refreshTransactions()">Refresh
+          <span ng-hide="downloading && !loading" >
+          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+          </span>
+          <span ng-show="downloading && !loading" >
+          <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+          </span>
+        </button> -->
 
         <!-- <button data-ng-click="downloadCerts()">Baixar Certificados
           <span ng-hide="downloading && !loading" >
@@ -116,12 +125,14 @@
           <td>{{ sub.Email }}</td>
           <td>{{ sub.Tipo | tipoMembro}}</td>
           <td>{{ sub.Observation }}</td>
-          <td>{{ sub.SubscriptionCode | uppercase}}</td>
+          <!-- <td><a href="" data-ng-click="checkTransaction(sub.SubscriptionCode)">{{ sub.SubscriptionCode | uppercase}}</a></td> -->
+          <td><a href="" data-ng-click="openTransactionPage(sub.SubscriptionCode)">{{ sub.SubscriptionCode | uppercase}}</a></td>
           <td>R${{ sub.PagamentoValor }}</td>
-          <td>{{ sub.SubscriptionStatus | SubStatus }} ({{ sub.Status | pagSeguroStatus}})</td>
+          <td>{{ sub.SubscriptionStatus | SubStatus }} ({{ sub.Status | pagSeguroStatus}}) [{{sub.Status}}]</td>
           <td class="small form-inline">
             <button class="btn-small" data-ng-click="confirmSubs(sub.userID)">Aprovar</button>
             <button class="btn-small " data-ng-click="confirmCancel(sub.id)">Cancelar</button>
+            <!-- <button class="btn-small " data-ng-click="updateTransactionByCode(sub.SubscriptionCode)">Atualizar</button> -->
           </td>
 
           <td class="small inline" data-ng-show="sub.path != null">
@@ -135,12 +146,12 @@
             <!-- <button class="btn-small " data-ng-click="generateSingleCert(sub.path)">Gerar</button> -->
             nenhum certificado gerado
           </td>
-          
+
         </tr>
       </tbody>
     </table>
   </div>
 
 
-  
+
 </div>

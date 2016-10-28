@@ -54,7 +54,7 @@ angular
                 angular.forEach($scope.usuarios, function (usuario) {
                     usuario.ID = parseFloat(usuario.ID);
                 });
-                
+
 
             });
         };
@@ -67,7 +67,7 @@ angular
         };
 
         $scope.generateCerts = function(){
-            
+
             $scope.loading = true;
 
             var data = {
@@ -157,5 +157,52 @@ angular
                 console.log(response);
             });
         };
-    
+
+        $scope.checkTransaction = function(subCode){
+            console.log("Check");
+            var data = {action: "CheckSubscription", subCode: subCode};
+            $scope.loading = true;
+            $http.post("php/evento.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log(response);
+            });
+        };
+
+        $scope.openTransactionPage = function(subCode){
+          console.log("Get URL");
+            var data = {action: "GetTransactionURL", subCode: subCode};
+            $scope.loading = true;
+            $http.post("php/evento.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log(response);
+                window.open(response);
+            });
+        };
+
+        $scope.updateTransactionByCode = function(subCode){
+          console.log("updateTransactionByCode");
+            var data = {action: "UpdateTransactionByCode", subCode: subCode};
+            $scope.loading = true;
+            $http.post("php/evento.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log("OK");
+                location.reload();
+            });
+        };
+
+        $scope.refreshTransactions = function(){
+            console.log("Refresh");
+            // var data = {action: "RefreshTransactions", subs: $scope.subs};
+            // $scope.loading = true;
+            // $http.post("php/evento.php", data).success(function (response) {
+            //     $scope.loading = false;
+            //     console.log(response);
+            // });
+            $scope.loading = true;
+            $http.post("php/cron_UpdateTransactions.php", data).success(function (response) {
+                $scope.loading = false;
+                console.log(response);
+            });
+        };
+
 }]);

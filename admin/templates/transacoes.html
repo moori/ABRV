@@ -13,7 +13,7 @@
       <div class="panel-body">
         <p>Consulta de todas as transações feitas através do pagseguro.</p>
       </div>
-      
+
       <!-- Table -->
       <table class="table table-striped">
         <thead>
@@ -33,7 +33,7 @@
             <td>{{ t.ID}}</td>
             <td>{{ t.Nome }} ({{t.UserID}})</td>
             <td>{{ t.SenderEmail }}</td>
-            <td>{{ t.TransactionCode }}</td>
+            <td><a href="" data-ng-click="openTransactionPage(t.TransactionCode)">{{ t.TransactionCode }}</a></td>
             <td data-ng-bind="t.Date | pagSeguroDate"></td>
             <td>{{ t.Description }} ({{ t.SaleID }})</td>
             <td>R{{ t.Amount | currency}}</td>

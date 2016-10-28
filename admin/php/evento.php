@@ -3,10 +3,10 @@ header("Access-Control-Allow-Origin: *");
 //header("Content-Type: application/json; charset=UTF-8");
 header("Content-Type: application/json; charset=iso-8859-1");
 include("conn.php");
+include("PagSeguroService.php");
 
 $data = json_decode(file_get_contents("php://input"));
 $action = $data->action;
-$eventID = $data->eventID;
 
 
 if($action == "LoadEventsList"){
@@ -53,26 +53,27 @@ if($action == "LoadUserSubscriptions"){
 	// ON `users`.`ID` = `event_user_rel`.`ID_user`
 	// WHERE `event_user_rel`.`ID_event` = '$eventID'";
 	$q = "SELECT * FROM
-	(SELECT 
-	`event_user_rel`.`id`, 
-	`users`.`ID` userID, 
-	`users`.`Nome`, 
-	`users`.`Email`, 
-	`users`.`Tipo`, 
-	`event_user_rel`.`Observation`, 
-	`event_user_rel`.`SubscriptionCode`, 
-	`event_user_rel`.`PagamentoValor`, 
-	`event_user_rel`.`Status`, 
-	`event_user_rel`.`ID_event`, 
+	(SELECT
+	`event_user_rel`.`id`,
+	`users`.`ID` userID,
+	`users`.`Nome`,
+	`users`.`Email`,
+	`users`.`Tipo`,
+	`event_user_rel`.`Observation`,
+	`event_user_rel`.`SubscriptionCode`,
+	`event_user_rel`.`PagamentoValor`,
+	`event_user_rel`.`Status`,
+	`event_user_rel`.`ID_event`,
+	`event_user_rel`.`ID_sale`,
 	`event_user_rel`.`SubscriptionStatus`
 	FROM `users`
 	INNER JOIN `event_user_rel`
 	ON `users`.`ID` = `event_user_rel`.`ID_user`) as subs
 	LEFT JOIN
-	(SELECT 
-	user_id, 
-	event_id, path, 
-	`public` 
+	(SELECT
+	user_id,
+	event_id, path,
+	`public`
 	FROM cert_user_rel ) as certs
 	ON subs.userID = certs.user_ID AND subs.ID_event = certs.event_id
 	WHERE subs.ID_event = '".$eventID."' ";
@@ -115,13 +116,56 @@ if($action == "ForceSubscription"){
 	$eventID = $data->eventID;
 	$valor = $data->valor;
 	$subcriptionHash = $eventID . $userID . substr(md5($eventID+111), 0, 8) . substr(md5($userID+222), 0, 8);
-    $currentDate = date("Y-m-d") . "|" . date("h:i:s"); 
+    $currentDate = date("Y-m-d") . "|" . date("h:i:s");
 	$q = "INSERT INTO `abrv_db`.`event_user_rel` (`id`, `ID_event`, `ID_user`, `ID_sale`, `PagamentoValor`, `Status`, `SubscriptionCode`, `SubscriptionStatus`,  `Observation`, `DateSubscription`, `DateModified`) VALUES (NULL, '$eventID',  '$userID', null, '$valor', 0, '$subcriptionHash', 1,'Cadastrado por Admin', '$currentDate', '$currentDate')";
     $query = $conn->prepare($q);
     $execute = $query->execute();
 	$conn = null;
 	// echo "Inscrito";
 	// echo json_encode($result);
+}
+
+if($action == "CheckSubscription"){
+	$subCode = $data->subCode;
+
+	echo PagSeguroService::CheckSubscription($subCode);
+}
+
+if($action == "GetTransactionURL"){
+	$subCode = $data->subCode;
+
+	echo json_encode(PagSeguroService::GetTransactionURLByCode($subCode));
+}
+
+if($action == "UpdateTransactionByCode"){
+	$subCode = $data->subCode;
+	PagSeguroService::UpdateStatusBySubscriptionCode($subCode);
+	echo json_encode("OK");
+}
+// if($action == "CheckSubscription"){
+// 	$subCode = $data->subCode;
+// 	$transaction = PagSeguroService::CheckSubscription($subCode);
+// 	echo $transaction;
+// }
+
+if($action == "RefreshTransactions"){
+	$subscriptions = $data->subs;
+	$returnArray = array();
+
+	for ($i=0; $i < count($subscriptions); $i++) {
+		$returnArray[$i]["userID"] = $subscriptions[$i]->userID;
+		$returnArray[$i]["Nome"] = $subscriptions[$i]->Nome;
+		$returnArray[$i]["code"] = $subscriptions[$i]->SubscriptionCode;
+		$status = PagSeguroService::GetStatusBySubscriptionCode($returnArray[0]["code"]);
+		// $status = json_decode($resp,true);
+		// $returnArray[$i]["oldStatus"] = $subscriptions[$i]->Status;
+		$returnArray[$i]["newStatus"] = $status;
+	}
+
+	// $return = PagSeguroService::GetStatusBySubscriptionCode($returnArray[0]["code"]);
+	// $return = json_decode($return, true);
+	echo json_encode( $returnArray );
+	// echo $return;
 }
 
 

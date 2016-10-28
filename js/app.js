@@ -5,7 +5,7 @@
 angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'truncate', 'ngSanitize', 'bootstrapLightbox', 'nya.bootstrap.select', 'ngStorage'])
     .config(['$urlRouterProvider', '$stateProvider', function($urlRouteProvider, $stateProvider){
         $urlRouteProvider.otherwise('/');
-        
+
         $stateProvider
             .state('home', {
             url: '/',
@@ -37,6 +37,11 @@ angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'truncate', 'ng
         }).state('normasDoColegio', {
             url: '/colegio/normasDoColegio',
             templateUrl: 'templates/colegio/normasDoColegio.html'
+        }).
+
+        state('membrosTeste', {
+            url: '/colegio/membrosTeste',
+            templateUrl: 'templates/colegio/membrosTeste.html'
         }).
 
         state('materias', {
@@ -74,7 +79,11 @@ angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate', 'truncate', 'ng
 
         state('sindiv', {
             url: '/sindiv',
-            templateUrl: 'templates/sindiv.html'
+            templateUrl: 'templates/sindiv/sindiv.html'
+        }).
+        state('sindivAnais', {
+            url: '/sindiv/anais',
+            templateUrl: 'templates/sindiv/sindivAnais.html'
         }).
 
         state('objetivos', {

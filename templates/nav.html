@@ -10,7 +10,7 @@
 -->
 
 <nav class="container navbar navbar-default navbar-abrv" data-ng-controller="navCtrl">
-    
+
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -42,7 +42,7 @@
 
 
         <li data-ng-show="!logged" ui-sref-active="active"><a ui-sref="associese">ASSOCIE-SE</a></li>
-     
+
         <li data-ng-show="logged" ui-sref-active="active">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PAINEL <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -50,7 +50,7 @@
             <li><a href="#" ui-sref="atualizarDados">Atualizar Dados</a></li>
             <li><a href="#" ui-sref="renovarAnuidade">Renovar Anuidade</a></li>
             <li><a href="#" ui-sref="alterarSenha">Alterar Senha</a></li>
-            <li><a href="#" ui-sref="inscricoes">Inscrições</a></li>  
+            <li><a href="#" ui-sref="inscricoes">Inscrições</a></li>
             <!-- <li><a href="#" ui-sref="cancelar">Cancelar</a></li> -->
           </ul>
         </li>
@@ -69,15 +69,22 @@
         <!-- <li ui-sref-active="active"><a ui-sref="materias">ARTIGOS</a></li> -->
         <li ui-sref-active="active"><a ui-sref="noticias">NOTÍCIAS</a></li>
         <li ui-sref-active="active"><a ui-sref="eventos">EVENTOS E CURSOS</a></li>
-        <li ui-sref-active="active"><a ui-sref="sindiv">SINDIV</a></li>
-        <!-- <li ui-sref-active="active"><a ui-sref="sobre">SOBRE</a></li> -->
-        
+        <!-- <li ui-sref-active="active"><a ui-sref="sindiv">SINDIV</a></li> -->
+        <li ui-sref-active="active" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SINDIV <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.sindiv.com.br" target="_blank">INFORMAÇÕES</a></li>
+            <li><a href="#" ui-sref="sindiv">EDIÇÕES ANTERIORES</a></li>
+            <li><a href="#" ui-sref="sindivAnais">ANAIS</a></li>
+          </ul>
+        </li>
+
 
 
 
         <li ui-sref-active="active" class="rounded_right"><a ui-sref="faleConosco" class="rounded_right">FALE CONOSCO</a></li>
 
-        
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
